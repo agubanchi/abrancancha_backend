@@ -1,4 +1,10 @@
 <p align="center">
+<b>LINK a documentacion de Proyecto:<b>
+  <a href="https://docs.google.com/document/d/1j0ti10-tqTuczG9UcJh1Gl8E4VVyU6ljgZRkvX3FUMU/edit" target="blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Google_Docs_2020_Logo.svg/1200px-Google_Docs_2020_Logo.svg.png" width="50" alt="Doc Logo" /></a>
+</p>
+
+
+<p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
