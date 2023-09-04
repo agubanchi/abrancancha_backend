@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "db": "json-server data/padelplayers.json --watch--port 3030",
+    "db": "json-server data/padelplayers.json --watch --port 3030",
 
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

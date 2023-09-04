@@ -15,4 +15,27 @@ export class PlayersService {
     const parsed = await res.json();
     return parsed;
   }
+
+  async createPlayer(players: Players) {
+    const id = await this.setId();
+    const newPlayer = {
+      ...players,
+      id,
+    };
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newPlayer),
+    });
+    const parsed = res.json();
+    return parsed;
+  }
+
+  private async setId(): Promise<number> {
+    const players = await this.getPlayers();
+    const id = players.pop().id + 1;
+    return id;
+  }
 }
