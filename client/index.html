@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manejador de turnos de canchas">
+  <link rel="stylesheet" href="css/index.css">
+  <!-- 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+   -->
+  <title>Abran Cancha</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Modulo Jugadores</h1>      
+    </header>
+    <main>
+      <h1>Formulario</h1>
+      <form id="formulario">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" required><br><br>
+  
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" required><br><br>
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" required><br><br>
+  
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" required><br><br>
+  
+          <label for="categoria">Categoría:</label>
+          <input type="number" id="categoria" required><br><br>
+  
+          <!-- <button type="button" onclick="agregarPersona()">Agregar Persona</button> -->
+          <button id="addPlayer" type="button">Agregar Jugador</button>
+      </form>
+  
+      <h1>Tabla de Datos</h1>
+      <table id="tabla">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Email</th>
+                  <th>Teléfono</th>
+                  <th>Categoría</th>
+                  <th>Avatar</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- Los datos se agregarán aquí -->
+          </tbody>
+      </table>
+    </main>
+
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>

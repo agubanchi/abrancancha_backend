@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Get, Controller, Param } from '@nestjs/common';
 import { PlayersService } from './players.service';
-import { Players } from './players.interface';
+import { Player } from 'src/player/player';
 
-@Controller('players')
+@Controller('/players')
 export class PlayersController {
   constructor(private readonly PlayersService: PlayersService) {}
-  @Get('/players')
-  getPlayers(): Promise<Players[]> {
+  @Get()
+  getPlayers(): Promise<Player[]> {
     return this.PlayersService.getPlayers();
   }
-  @Get('/players/:id')
-  getPlayersById(@Param('id') id: number): Promise<Players[]> {
+  @Get(':id')
+  getPlayersById(@Param('id') id: number): Promise<Player[]> {
     return this.PlayersService.getPlayersById(id);
   }
 }

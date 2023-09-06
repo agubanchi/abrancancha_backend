@@ -1,0 +1,81 @@
+.container {
+  min-height: 100vh;
+  min-width: 80vw;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  align-content: space-between;
+}
+
+/* header p {
+  font-size: x-large;
+}
+
+header,
+footer {
+  text-align: center;
+} */
+
+/* main {
+  background-image: url('../assets/wave-bg.jpg');
+} */
+
+/* .p1,
+.p2,
+.p3 {
+  position: absolute;
+  font-size: 10rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+.p1 {
+  top: 30%;
+  right: 10%;
+}
+
+.p2 {
+  top: 40%;
+  right: 19%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.p3 {
+  top: 50%;
+  right: 5%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1,
+footer p {
+  color: tomato
+}
+
+
+footer img {
+  height: 60px;
+}
+
+footer p,
+header p {
+  font-weight: 600;
+} */
+
+/* ******************************* */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+img {
+  width: 50px;
+}
