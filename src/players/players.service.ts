@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Player } from 'src/player/player';
+// import { Player } from 'src/player/player';
+import { Player } from 'src/player/player.interface';
 const BASE_URL = 'http://localhost:3030/padelplayers/';
 
 @Injectable()
@@ -15,22 +16,41 @@ export class PlayersService {
     const parsed = await res.json();
     return parsed;
   }
-  // async getPersonas(): Promise<Persona[]> {
-  //   // console.log( "en servicio"); 
-  //   let arrayPersonas: Persona[] = [];
-  //   let res = await fetch();
-  //   // console.log( res ) ; 
-  //   let resParsed = await res.json();
-  //   for (let i = 0; 1 < resParsed.length; i++) {
-  //     let persona = new persona();
-  //     persona.setID(resparsed[i].id);
-  //     persona.setID(resparsed[i].nombre);
-  //     persona.setApellido(resparsed[i].apellido);
-  //     persona.setID(resparsed[i].edad);
-  //     persona.setID(resparsed[i].ciudad);
-  //     console.log(persona);
-  //     arrayPersonas.push(persona);
-  //     console.log(arrayPersonas);
-  //   }
+
+  // async setNewPlayer(player: Player) {  /* <-- sugerencia de nombre alternativo.---- */
+  async createPlayer(player: Player) {
+    const id = await this.setNewId();
+    const avatar = `https://i.pravatar.cc/200?img=${id}`; //<-esta pagina solo soporta 70 como maximo id.--------
+    const newPlayer = { id, ...player, avatar };
+
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', },
+      body: JSON.stringify(newPlayer),
+    });
+    const parsed = res.json();
+    return parsed;
+  }
+
+  private async setNewId(): Promise<number> {
+    const players: Player[] = await this.getPlayers();
+    const lastPlayer: Player = players.pop();
+    const id = lastPlayer.id + 1;
+    // const id = Math.floor(Math.random() * (70 - 34 + 1)) + 34;
+    return id;
+  }
+
+  // alternativa que no funcionó
+  // private async setNewId(): Promise<number> {
+  //   const players: Player[] = await this.getPlayers();
+  //   const lastPlayer1: Player = players.pop();
+  //   const lastPlayer = new Player(...lastPlayer1);
+  //     lastPlayer.setID(resparsed[i].id);
+  //     lastPlayer.setID(resparsed[i].nombre);
+  //     lastPlayer.setApellido(resparsed[i].apellido);
+  //     lastPlayer.setID(resparsed[i].edad);
+  //     lastPlayer.setID(resparsed[i].ciudad);
+  // const id = lastPlayer1.getId() + 1; // <-no funcionó.---
+  // return id;
   // }
 }

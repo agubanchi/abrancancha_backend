@@ -7,14 +7,14 @@ async function consultarPlayers() {
     try {
         const response = await fetch(BASE_END_POINT);
         if (!response.ok) {
-            console.log("error");
+            console.log("consultarPlayers.error.response", response);
         }
         const data = await response.json();
         // console.log("consultarPlayers");
         actualizarTabla(data);
     }
     catch (error) {
-        console.log("error", error);
+        console.log("consultarPlayers.error.catch", error);
     }
 }
 //-----------------------------------------------------------------------------
@@ -63,8 +63,8 @@ async function addPlayer() {
     const nombre = document.getElementById("nombre").value;
     const apellido = document.getElementById("apellido").value;
     const email = document.getElementById("email").value;
-    const telefono = document.getElementById("telefono").value;
-    const categoria = document.getElementById("categoria").value;
+    const telefono = Number(document.getElementById("telefono").value);
+    const categoria = Number(document.getElementById("categoria").value);
     // const avatar = `https://i.pravatar.cc/300?img=${id}`;
 
     // Crear objeto de player
@@ -80,10 +80,10 @@ async function addPlayer() {
             body: JSON.stringify(player),
         });
         if (!response.ok) {
-            console.log("error");
+            console.log("addPlayer.error.response", response);
         }
     } catch (error) {
-        console.log("error", error);
+        console.log("addPlayer.error.catch", error);
     }
 
     // Limpiar el formulario
