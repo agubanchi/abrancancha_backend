@@ -278,6 +278,39 @@
       "categoria": 3,
       "avatar": "https://i.pravatar.cc/300?img=31",
       "id": 31
+    },
+    {
+      "id": 32
+    },
+    {
+      "id": 33
+    },
+    {
+      "id": 34
+    },
+    {
+      "id": 35
+    },
+    {
+      "id": 36
+    },
+    {
+      "id": 37
+    },
+    {
+      "id": 38
+    },
+    {
+      "id": 39
+    },
+    {
+      "nombre": "Juan",
+      "apellido": "Perez",
+      "email": "marta.molina@example.com",
+      "telefono": 111333,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=18",
+      "id": 40
     }
   ]
 }

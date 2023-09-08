@@ -6,11 +6,11 @@ import { Players } from './players.interface';
 @Controller('players')
 export class PlayersController {
   constructor(private readonly PlayersService: PlayersService) {}
-  @Get('/players')
+  @Get()
   getPlayers(): Promise<Players[]> {
     return this.PlayersService.getPlayers();
   }
-  @Get('/players/:id')
+  @Get(':id')
   getPlayersById(@Param('id') id: number): Promise<Players[]> {
     return this.PlayersService.getPlayersById(id);
   }
