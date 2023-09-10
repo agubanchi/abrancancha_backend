@@ -40,6 +40,35 @@ export class PlayersService {
     return id;
   }
 
+  async deletePlayersById(id: number): Promise<any> {
+    const res = await fetch(BASE_URL + id, {
+      method: 'DELETE',
+    });
+    const parsed = await res.json();
+    return parsed;
+  }
+  async updatePlayersById(id:number ,body:Player):Promise<void>{
+    const isPlayer=await this.getPlayersById(id);
+    if(!Object.keys(isPlayer).length)return;
+    const updatePlayer={...body,id};
+    console.log('updatePlayer',updatePlayer);
+    const res =await fetch(BASE_URL +id,{
+      method:'PUT',
+      headers:{
+        'Content-Type':'aplication/json',
+      },
+      body:JSON.stringify(updatePlayer),
+    });
+    const parsed =await res.json();
+    return parsed;
+    
+  }
+
+
+
+
+
+
   // alternativa que no funcionó
   // private async setNewId(): Promise<number> {
   //   const players: Player[] = await this.getPlayers();
