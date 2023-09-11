@@ -26,14 +26,14 @@ export class PlayersController {
     return this.PlayersService.createPlayer(body);
   }
 
-  // @Delete(':id')
-  // deletePlayerById(@Param('id', ParseIntPipe) id: number): Promise<void> {
-  //   return this.PlayersService.deletePlayerById(id);
-  // }
+  @Delete(':id')
+   deletePlayerById(@Param('id', ParseIntPipe) id: number): Promise<void> {
+     return this.PlayersService.deletePlayerById(id);
+   }
 
-  // @Put(':id')
-  // @HttpCode(HttpStatus.NO_CONTENT)  // @HttpCode(204)
-  // updatePlayerById(@Param('id', ParseIntPipe) id: number, @Body() playerDto: PlayerDto): Promise<void> {
-  //   return this.PlayersService.updatePlayerById(id, playerDto);
-  // }
+   @Put(':id')
+   @HttpCode(HttpStatus.NO_CONTENT)  // @HttpCode(204)
+  updatePlayersByid(@Param('id')id:number,@Body()body):Promise<void>{
+    return this.PlayersService.updatePlayerById(id,body);
+  }
 }
