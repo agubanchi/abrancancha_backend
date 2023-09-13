@@ -95,6 +95,7 @@
             <th scope="col">Teléfono</th>
             <th scope="col">Categoría</th>
             <th scope="col">Avatar</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -105,7 +106,10 @@
             <th></th>
             <th></th>
             <th></th>
-            <th></th>
+            <td>
+              <button class="btn btn-primary botonEditar" data-player-id="{{player.id}}">Editar</button>
+              <button class="btn btn-danger botonBorrar" data-player-id="{{player.id}}">Borrar</button>
+            </td>
           </tr>
         </tbody>
       </table>

@@ -350,6 +350,15 @@
       "telefono": 0,
       "categoria": 0,
       "avatar": "https://i.pravatar.cc/200?img=39"
+    },
+    {
+      "id": 40,
+      "nombre": "juan",
+      "apellido": "carlos",
+      "email": "",
+      "telefono": 0,
+      "categoria": 0,
+      "avatar": "https://i.pravatar.cc/200?img=40"
     }
   ]
 }
