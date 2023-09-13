@@ -1,81 +1,127 @@
-.container {
-  min-height: 100vh;
-  min-width: 80vw;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  row-gap: 1rem;
-  align-content: space-between;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
 }
 
-/* header p {
-  font-size: x-large;
+section {
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  column-gap: 1rem;
+  row-gap: 2rem;
 }
 
-header,
-footer {
-  text-align: center;
-} */
-
-/* main {
-  background-image: url('../assets/wave-bg.jpg');
-} */
-
-/* .p1,
-.p2,
-.p3 {
-  position: absolute;
-  font-size: 10rem;
-  color: white;
-  text-transform: uppercase;
-}
-
-.p1 {
-  top: 30%;
-  right: 10%;
-}
-
-.p2 {
-  top: 40%;
-  right: 19%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-}
-
-.p3 {
-  top: 50%;
-  right: 5%;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-h1,
-footer p {
-  color: tomato
-}
-
-
-footer img {
-  height: 60px;
-}
-
-footer p,
-header p {
-  font-weight: 600;
-} */
-
-/* ******************************* */
-table {
+.form {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
 }
 
-table, th, td {
-  border: 1px solid black;
+#formulario {
+  padding: 50px;
 }
 
-th, td {
+.modal-title {
+  text-align: center;
+  color: #272727;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  color: #1d1d1d;
+  background-color: #77da7e;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 800;
+  font-size: 23px;
+  line-height: 30px;
+  text-align: center;
+  color: orange;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 0.9em;
+  line-height: 30px;
+  text-align: center;
+  color: #407be9;
+}
+
+h4 {
+  font-weight: 300;
+  font-size: 0.7em;
+  line-height: 30px;
+  text-align: center;
+  color: #199a76;
+}
+
+p {
+  margin-top: 10px;
+  font-weight: 600;
+  background-color: #77da7e;
+  border-radius: 8px;
   padding: 8px;
-  text-align: left;
+  color: #fff;
 }
+
 img {
-  width: 50px;
+  max-width: 150px;
+}
+
+#tabla th {
+  background-color: #77da7e;
+  text-align: center;
+}
+#tabla td {
+  text-align: center;
+}
+
+.button_content {
+  display: inline-block;
+  text-align: center;
+}
+
+.delete {
+  background-color: rgb(175, 38, 38);
+}
+
+.edit {
+  background-color: rgb(38, 141, 175);
+}
+
+.add {
+  width: 100%;
+  max-width: 300px;
+  background-color: rgb(38, 175, 74);
+  text-align: center;
+  margin: 30px 30px;
+}
+
+#addPlayer {
+  border: none;
+  border-radius: 5px;
+  background-color: #77da7e;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  color: #1d1d1d;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto;
+  min-width: 300px;
+  display: block;
+}
+
+#addPlayer a:hover {
+  color: #ffffff;
+}
+
+img {
+  width: 100%;
 }
