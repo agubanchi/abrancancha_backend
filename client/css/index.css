@@ -71,7 +71,7 @@ p {
 }
 
 img {
-  max-width: 150px;
+  max-width: 70px;
 }
 
 #tabla th {
@@ -118,10 +118,26 @@ img {
   display: block;
 }
 
-#addPlayer a:hover {
-  color: #ffffff;
+#botonConsulta {
+  border: none;
+  border-radius: 5px;
+  background-color: #1d1d1d;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  color: #77da7e;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto;
+  min-width: 300px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
+#tabla {
+  padding: 20px;
+}
 img {
   width: 100%;
 }
