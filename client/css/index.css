@@ -61,13 +61,12 @@ h4 {
   color: #199a76;
 }
 
-p {
+p#errorMessage {
   margin-top: 10px;
   font-weight: 600;
-  background-color: #77da7e;
   border-radius: 8px;
   padding: 8px;
-  color: #fff;
+  color: red;
 }
 
 img {
