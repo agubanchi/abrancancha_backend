@@ -16,15 +16,15 @@ Crear una api utilizando el framework [Nest](https://github.com/nestjs/nest).  <
  ## Consigna:
 ##### 📆 Fecha Limite martes 05-09-2023 ✅
  - [x] Crear el proyecto utilizando [Nest](https://github.com/nestjs/nest)
- - [x] Armar modelos de datos, simular una petición y su consiguiente respuesta del backend 
- - [x] Montar Base de datos de prueba, conectarla con la API tener un servicio con una petición y su respuesta (datos obtenidos de la DB) GET-GET BylD 
+ - [x] Armar modelos de datos, simular una petición y su consiguiente respuesta del backend
+ - [x] Montar Base de datos de prueba, conectarla con la API tener un servicio con una petición y su respuesta (datos obtenidos de la DB) GET-GET BylD
  - [x] Obtener la respuesta de la petición utilizando [POSTMAN](https://www.postman.com/)
- - [x] Crear los endpoints necesarios de ALTA para nuestra API utilizando métodos POST 
-##### 📆 Fecha Limite lunes 18-09-2023 
- - [ ] Crear los endpoints necesarios de BAJA Y MODIFICACIONES para nuestra API utilizando métodos PUT Y DELET 
- - [ ] A todos los endpoints previamente creados agregarle los codigos de respuesta utilizando el decorador @Res 
- - [ ] Agregar excepciones a todos los endpoints previamente creados 
- - [ ] Agregar módulos y validaciones 
+ - [x] Crear los endpoints necesarios de ALTA para nuestra API utilizando métodos POST
+##### 📆 Fecha Limite lunes 18-09-2023
+ - [x] Crear los endpoints necesarios de BAJA Y MODIFICACIONES para nuestra API utilizando métodos PUT Y DELETE
+ - [ ] A todos los endpoints previamente creados agregarle los codigos de respuesta utilizando el decorador @Res
+ - [ ] Agregar excepciones a todos los endpoints previamente creados
+ - [ ] Agregar módulos y validaciones
  - [ ] Crear y agregar DTOS al proyecto y validaciones
 
 #### 📆 Fecha Limite de entrega y demo del martes 19-09-2023 al jueves 21-09-2029 ❗
@@ -68,5 +68,5 @@ Servicios ->> JSON-Server: fetch(3030)
 Note right of JSON-Server: La base de Datos <br/>puede cambiar o no<br/>dependiendo de la <br/>orden enviada.
 JSON-Server-->>Servicios: datos/error
 Servicios-->>Controladores: datos/error
-Controladores->Navegador: datos/error
+Controladores ->> Navegador: datos/error
 ```

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+// import { AppController } from './app.controller';
+// import { AppService } from './app.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { PlayersController } from './players/players.controller';
@@ -12,7 +12,7 @@ import { PlayersService } from './players/players.service';
       serveRoot: '/' /** para que los endpoints incorrectos no redirijan al home */
     }),
   ],
-  controllers: [AppController, PlayersController],
-  providers: [AppService, PlayersService],
+  controllers: [/* AppController, */ PlayersController],
+  providers: [/* AppService, */ PlayersService],
 })
 export class AppModule {}
