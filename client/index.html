@@ -22,21 +22,23 @@
     <main>
       <h1>Formulario</h1>
       <form id="formulario">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" required><br><br>
+          <label for="nombre">Nombre: </label>
+          <input type="text" id="nombre" placeholder="Indica tu nombre" required><br><br>
   
           <label for="apellido">Apellido:</label>
-          <input type="text" id="apellido" required><br><br>
+          <input type="text" id="apellido" placeholder="Indica tu apellido" required><br><br>
   
           <label for="email">Email:</label>
-          <input type="email" id="email" required><br><br>
+          <input type="email" id="email" placeholder="Indica tu email de contacto" required><br><br>
   
           <label for="telefono">Teléfono:</label>
-          <input type="tel" id="telefono" required><br><br>
+          <input type="tel" id="telefono" placeholder="Indica tu numero de contacto" required><br><br>
   
           <label for="categoria">Categoría:</label>
-          <input type="number" id="categoria" required><br><br>
+          <input type="number" id="categoria" placeholder="Elija la categoria" required><br><br>
+
           <p id="errorMessage"></p>
+
           <!-- <button type="button" onclick="agregarPersona()">Agregar Persona</button> -->
           <button id="addPlayer" type="button">Agregar Jugador</button>
       </form>
