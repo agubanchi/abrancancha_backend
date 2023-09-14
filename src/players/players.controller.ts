@@ -10,7 +10,7 @@ import { Player } from 'src/player/player.interface';
 
 @Controller('/players')
 export class PlayersController {
-  constructor(private readonly PlayersService: PlayersService) { }
+  constructor(private readonly PlayersService: PlayersService) {}
   @Get()
   getPlayers(): Promise<Player[]> {
     return this.PlayersService.getPlayers();
