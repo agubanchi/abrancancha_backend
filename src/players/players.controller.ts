@@ -22,6 +22,7 @@ export class PlayersController {
 
   @Post()
   // createPlayer(@Body() playerDto: PlayerDto): Promise<any> {
+    // return this.PlayersService.createPlayer(playerDto);
   createPlayer(@Body() body): Promise<any> {
     return this.PlayersService.createPlayer(body);
   }
