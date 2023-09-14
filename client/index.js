@@ -1,7 +1,7 @@
 const BASE_END_POINT = '/players';
 
 //-----------------------------------------------------------------------------
-// Suponiendo que tienes un botón en tu HTML con el ID "botonConsulta"
+// Boton de consular tabla de Jugadores
 const botonConsulta = document.getElementById('botonConsulta');
 
 // Asignar la función como manejador de eventos al hacer clic en el botón
@@ -85,11 +85,21 @@ async function addPlayer() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(player),
     });
-    if (!response.ok) {
-      console.log('addPlayer.error.response', response);
+    if (response.ok) {
+      Swal.fire(
+        'Usuario agregado!',
+        'El usuario fue agregado con éxito',
+        'success',
+      );
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'El usuario no pudo ser agregado con éxito',
+      });
     }
   } catch (error) {
-    console.log('addPlayer.error.catch', error);
+    console.error(error);
   }
 
   // Limpiar el formulario

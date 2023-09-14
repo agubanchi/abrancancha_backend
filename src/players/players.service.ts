@@ -1,4 +1,5 @@
-import { Injectable } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import { Injectable, NotFoundException } from '@nestjs/common';
 // import { Player } from 'src/player/player';
 import { Player } from 'src/player/player.interface';
 const BASE_URL = 'http://localhost:3030/padelplayers/';
@@ -14,7 +15,10 @@ export class PlayersService {
   async getPlayersById(id: number): Promise<Player[]> {
     const res = await fetch(BASE_URL + id);
     const parsed = await res.json();
-    return parsed;
+    //si el player existe: lo retornamos al controlador
+    if (Object.keys(parsed).length) return parsed;
+    //si no, no lo encuentra mandamos mensaje de error
+    throw new NotFoundException({ error: 'track no existe' });
   }
 
   // async setNewPlayer(player: Player) {  /* <-- sugerencia de nombre alternativo.---- */
@@ -25,7 +29,7 @@ export class PlayersService {
 
     const res = await fetch(BASE_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newPlayer),
     });
     const parsed = res.json();
