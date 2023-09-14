@@ -43,6 +43,28 @@ export class PlayersService {
     // const id = Math.floor(Math.random() * (70 - 34 + 1)) + 34;
     return id;
   }
+  async deletePlayerById(id: number): Promise<any> {
+    const res = await fetch(BASE_URL + id, {
+      method: 'DELETE',
+    });
+    const parsed = await res.json();
+    return parsed;
+  }
+  async updatePlayerById(id: number, body: Player): Promise<void> {
+    const isPlayer = await this.getPlayersById(id);
+    if (!Object.keys(isPlayer).length) return;
+    const updatePlayer = { ...body, id };
+    console.log('updatePlayer', updatePlayer);
+    const res = await fetch(BASE_URL + id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'aplication/json',
+      },
+      body: JSON.stringify(updatePlayer),
+    });
+    const parsed = await res.json();
+    return parsed;
+  }
 
   // alternativa que no funcionó
   // private async setNewId(): Promise<number> {

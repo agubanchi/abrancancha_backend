@@ -1,31 +1,7 @@
 {
   "padelplayers": [
     {
-      "id": 1,
-      "nombre": "Juan",
-      "apellido": "González",
-      "email": "juan.gonzalez@example.com",
-      "telefono": 1234567890,
-      "categoria": 3,
-      "avatar": "https://i.pravatar.cc/300?img=1"
-    },
-    {
-      "id": 2,
-      "nombre": "María",
-      "apellido": "López",
-      "email": "maria.lopez@example.com",
-      "telefono": 9876543210,
-      "categoria": 2,
-      "avatar": "https://i.pravatar.cc/300?img=2"
-    },
-    {
-      "id": 3,
-      "nombre": "Carlos",
-      "apellido": "Martínez",
-      "email": "carlos.martinez@example.com",
-      "telefono": 5551234567,
-      "categoria": 1,
-      "avatar": "https://i.pravatar.cc/300?img=3"
+      "id": 3
     },
     {
       "id": 4,
@@ -35,24 +11,6 @@
       "telefono": 1239874560,
       "categoria": 3,
       "avatar": "https://i.pravatar.cc/300?img=4"
-    },
-    {
-      "id": 5,
-      "nombre": "Pedro",
-      "apellido": "Rodríguez",
-      "email": "pedro.rodriguez@example.com",
-      "telefono": 7890123456,
-      "categoria": 2,
-      "avatar": "https://i.pravatar.cc/300?img=5"
-    },
-    {
-      "id": 6,
-      "nombre": "Sofía",
-      "apellido": "García",
-      "email": "sofia.garcia@example.com",
-      "telefono": 2345678901,
-      "categoria": 1,
-      "avatar": "https://i.pravatar.cc/300?img=6"
     },
     {
       "id": 7,
@@ -287,87 +245,6 @@
       "telefono": 2244445077,
       "categoria": 1,
       "avatar": "https://i.pravatar.cc/200?img=32"
-    },
-    {
-      "id": 33,
-      "nombre": "",
-      "apellido": "",
-      "email": "",
-      "telefono": 0,
-      "categoria": 0,
-      "avatar": "https://i.pravatar.cc/200?img=33"
-    },
-    {
-      "id": 34,
-      "nombre": "",
-      "apellido": "",
-      "email": "",
-      "telefono": 0,
-      "categoria": 777,
-      "avatar": "https://i.pravatar.cc/200?img=34"
-    },
-    {
-      "id": 35,
-      "nombre": "Agustin",
-      "apellido": "",
-      "email": "",
-      "telefono": 0,
-      "categoria": 0,
-      "avatar": "https://i.pravatar.cc/200?img=35"
-    },
-    {
-      "id": 36,
-      "nombre": "",
-      "apellido": "",
-      "email": "",
-      "telefono": 0,
-      "categoria": 0,
-      "avatar": "https://i.pravatar.cc/200?img=36"
-    },
-    {
-      "id": 37,
-      "nombre": "Agustin",
-      "apellido": "Banchi",
-      "email": "agu.banchi@gmail.com",
-      "telefono": 1414141,
-      "categoria": 2,
-      "avatar": "https://i.pravatar.cc/200?img=37"
-    },
-    {
-      "id": 38,
-      "nombre": "Agustin",
-      "apellido": "",
-      "email": "",
-      "telefono": 0,
-      "categoria": 0,
-      "avatar": "https://i.pravatar.cc/200?img=38"
-    },
-    {
-      "id": 39,
-      "nombre": "555",
-      "apellido": "",
-      "email": "",
-      "telefono": 0,
-      "categoria": 0,
-      "avatar": "https://i.pravatar.cc/200?img=39"
-    },
-    {
-      "id": 40,
-      "nombre": "pepe",
-      "apellido": "Banchi",
-      "email": "pepebanchi77@hotmail.com",
-      "telefono": 2244445077,
-      "categoria": 1,
-      "avatar": "https://i.pravatar.cc/200?img=40"
-    },
-    {
-      "id": 41,
-      "nombre": "",
-      "apellido": "",
-      "email": "",
-      "telefono": 0,
-      "categoria": 0,
-      "avatar": "https://i.pravatar.cc/200?img=41"
     }
   ]
 }
