@@ -1,22 +1,46 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Get, Controller, Param, Post, Body } from '@nestjs/common';
+import {
+  Get,
+  Post,
+  Delete,
+  Put,
+  Controller,
+  Param,
+  Body,
+  HttpCode,
+  HttpStatus,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { PlayersService } from './players.service';
-import { Players } from './players.interface';
+// import { Player } from 'src/player/player';
+import { Player } from 'src/player/player.interface';
 
-@Controller('players')
+@Controller('/players')
 export class PlayersController {
   constructor(private readonly PlayersService: PlayersService) {}
   @Get()
-  getPlayers(): Promise<Players[]> {
+  getPlayers(): Promise<Player[]> {
     return this.PlayersService.getPlayers();
   }
   @Get(':id')
-  getPlayersById(@Param('id') id: number): Promise<Players[]> {
+  getPlayersById(@Param('id', ParseIntPipe) id: number): Promise<Player[]> {
     return this.PlayersService.getPlayersById(id);
   }
 
   @Post()
+  // createPlayer(@Body() playerDto: PlayerDto): Promise<any> {
   createPlayer(@Body() body): Promise<any> {
     return this.PlayersService.createPlayer(body);
+  }
+
+  @Delete(':id')
+   deletePlayerById(@Param('id', ParseIntPipe) id: number): Promise<void> {
+     return this.PlayersService.deletePlayerById(id);
+   }
+
+   @Put(':id')
+   @HttpCode(HttpStatus.NO_CONTENT)  // @HttpCode(204)
+  updatePlayersByid(@Param('id')id:number,@Body()body):Promise<void>{
+    return this.PlayersService.updatePlayerById(id,body);
   }
 }

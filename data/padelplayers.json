@@ -271,46 +271,94 @@
       "avatar": "https://i.pravatar.cc/300?img=30"
     },
     {
+      "id": 31,
       "nombre": "Nico",
       "apellido": "mansilla",
       "email": "nmansilla@example.com",
       "telefono": 445212324423,
       "categoria": 3,
-      "avatar": "https://i.pravatar.cc/300?img=31",
-      "id": 31
+      "avatar": "https://i.pravatar.cc/300?img=31"
     },
     {
-      "id": 32
-    },
-    {
-      "id": 33
-    },
-    {
-      "id": 34
-    },
-    {
-      "id": 35
-    },
-    {
-      "id": 36
-    },
-    {
-      "id": 37
-    },
-    {
-      "id": 38
-    },
-    {
-      "id": 39
-    },
-    {
-      "nombre": "Juan",
-      "apellido": "Perez",
-      "email": "marta.molina@example.com",
-      "telefono": 111333,
+      "id": 32,
+      "nombre": "Agustin",
+      "apellido": "Banchi",
+      "email": "pepebanchi77@hotmail.com",
+      "telefono": 2244445077,
       "categoria": 1,
-      "avatar": "https://i.pravatar.cc/300?img=18",
-      "id": 40
+      "avatar": "https://i.pravatar.cc/200?img=32"
+    },
+    {
+      "id": 33,
+      "nombre": "",
+      "apellido": "",
+      "email": "",
+      "telefono": 0,
+      "categoria": 0,
+      "avatar": "https://i.pravatar.cc/200?img=33"
+    },
+    {
+      "id": 34,
+      "nombre": "",
+      "apellido": "",
+      "email": "",
+      "telefono": 0,
+      "categoria": 777,
+      "avatar": "https://i.pravatar.cc/200?img=34"
+    },
+    {
+      "id": 35,
+      "nombre": "Agustin",
+      "apellido": "",
+      "email": "",
+      "telefono": 0,
+      "categoria": 0,
+      "avatar": "https://i.pravatar.cc/200?img=35"
+    },
+    {
+      "id": 36,
+      "nombre": "",
+      "apellido": "",
+      "email": "",
+      "telefono": 0,
+      "categoria": 0,
+      "avatar": "https://i.pravatar.cc/200?img=36"
+    },
+    {
+      "id": 37,
+      "nombre": "Agustin",
+      "apellido": "Banchi",
+      "email": "agu.banchi@gmail.com",
+      "telefono": 1414141,
+      "categoria": 2,
+      "avatar": "https://i.pravatar.cc/200?img=37"
+    },
+    {
+      "id": 38,
+      "nombre": "Agustin",
+      "apellido": "",
+      "email": "",
+      "telefono": 0,
+      "categoria": 0,
+      "avatar": "https://i.pravatar.cc/200?img=38"
+    },
+    {
+      "id": 39,
+      "nombre": "555",
+      "apellido": "",
+      "email": "",
+      "telefono": 0,
+      "categoria": 0,
+      "avatar": "https://i.pravatar.cc/200?img=39"
+    },
+    {
+      "id": 40,
+      "nombre": "juan",
+      "apellido": "carlos",
+      "email": "",
+      "telefono": 0,
+      "categoria": 0,
+      "avatar": "https://i.pravatar.cc/200?img=40"
     }
   ]
 }

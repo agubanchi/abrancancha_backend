@@ -7,7 +7,10 @@ import { PlayersController } from './players/players.controller';
 import { PlayersService } from './players/players.service';
 @Module({
   imports: [
-    ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'client') }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'client'),
+      serveRoot: '/' /** para que los endpoints incorrectos no redirijan al home */
+    }),
   ],
   controllers: [AppController, PlayersController],
   providers: [AppService, PlayersService],
