@@ -17,12 +17,12 @@ export class PlayersService {
     const res = await fetch(BASE_URL + id);
     const parsed = await res.json();
     if (Object.keys(parsed).length) return parsed;
-    throw new NotFoundException(`Jugador con id ${id} no existe.`)
+    throw new NotFoundException(`Jugador con id ${id} no existe.`);
     // return parsed;
   }
 
   // async setNewPlayer(player: Player) {  /* <-- sugerencia de nombre alternativo.---- */
-  // async createPlayer(player: PlayerDto) { /*<- no funciona */ 
+  // async createPlayer(player: PlayerDto) { /*<- no funciona */
   async createPlayer(player: Player) {
     const id = await this.setNewId();
     const avatar = `https://i.pravatar.cc/200?img=${id}`; //<-esta pagina solo soporta 70 como maximo id.--------
