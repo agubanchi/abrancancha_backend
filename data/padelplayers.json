@@ -221,19 +221,10 @@
     },
     {
       "id": 30,
-      "nombre": "María",
-      "apellido": "Sánchez",
-      "email": "maria.sanchez@example.com",
-      "telefono": 2345678901,
-      "categoria": 1,
-      "avatar": "https://i.pravatar.cc/300?img=30"
-    },
-    {
-      "id": 31,
-      "nombre": "Nico",
-      "apellido": "mansilla",
-      "email": "nmansilla@example.com",
-      "telefono": 445212324423,
+      "nombre": "Cambio con PUT",
+      "apellido": "González",
+      "email": "juan.gonzalez@example.com",
+      "telefono": 1234567890,
       "categoria": 3,
       "avatar": "https://i.pravatar.cc/300?img=31"
     },
