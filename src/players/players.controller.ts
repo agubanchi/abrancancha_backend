@@ -1,15 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {
-  Get,
-  Post,
-  Delete,
-  Put,
-  Controller,
-  Param,
-  Body,
-  HttpCode,
-  HttpStatus,
-  ParseIntPipe,
+  Get, Post, Delete, Put,
+  Controller, Param, Body,
+  HttpCode, HttpStatus, ParseIntPipe
 } from '@nestjs/common';
 import { PlayersService } from './players.service';
 // import { Player } from 'src/player/player';
@@ -29,6 +22,7 @@ export class PlayersController {
 
   @Post()
   // createPlayer(@Body() playerDto: PlayerDto): Promise<any> {
+    // return this.PlayersService.createPlayer(playerDto);
   createPlayer(@Body() body): Promise<any> {
     return this.PlayersService.createPlayer(body);
   }

@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { PlayerDto } from 'src/player/player.dto';
 // import { Player } from 'src/player/player';
 import { Player } from 'src/player/player.interface';
 const BASE_URL = 'http://localhost:3030/padelplayers/';
@@ -15,13 +16,13 @@ export class PlayersService {
   async getPlayersById(id: number): Promise<Player[]> {
     const res = await fetch(BASE_URL + id);
     const parsed = await res.json();
-    //si el player existe: lo retornamos al controlador
     if (Object.keys(parsed).length) return parsed;
-    //si no, no lo encuentra mandamos mensaje de error
-    throw new NotFoundException({ error: 'track no existe' });
+    throw new NotFoundException(`Jugador con id ${id} no existe.`)
+    // return parsed;
   }
 
   // async setNewPlayer(player: Player) {  /* <-- sugerencia de nombre alternativo.---- */
+  // async createPlayer(player: PlayerDto) { /*<- no funciona */ 
   async createPlayer(player: Player) {
     const id = await this.setNewId();
     const avatar = `https://i.pravatar.cc/200?img=${id}`; //<-esta pagina solo soporta 70 como maximo id.--------
@@ -40,7 +41,6 @@ export class PlayersService {
     const players: Player[] = await this.getPlayers();
     const lastPlayer: Player = players.pop();
     const id = lastPlayer.id + 1;
-    // const id = Math.floor(Math.random() * (70 - 34 + 1)) + 34;
     return id;
   }
   async deletePlayerById(id: number): Promise<any> {
