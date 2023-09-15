@@ -39,7 +39,7 @@ export class PlayersController {
     @Param('id', new ParseIntPipe({
       errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
     })) id: number): Promise<void> {
-    return this.PlayersService.deletePlayerById(id);
+    return this.PlayersService.deletePlayersById(id);
   }/*  */
 
   @Put(':id')
@@ -49,6 +49,6 @@ export class PlayersController {
       errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
     })) id: number,
     @Body() body): Promise<void> {
-    return this.PlayersService.updatePlayerById(id, body);
+    return this.PlayersService.updatePlayersById(id, body);
   }
 }
