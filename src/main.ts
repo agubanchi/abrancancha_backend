@@ -1,9 +1,10 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+
 import { ValidationPipe } from '@nestjs/common';
+import { PlayersModule } from './players/players.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(PlayersModule);
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
