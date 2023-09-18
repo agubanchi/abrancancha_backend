@@ -1,15 +1,9 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {
-  Get,
-  Post,
-  Delete,
-  Put,
-  Controller,
-  Param,
-  Body,
-  HttpCode,
-  HttpStatus,
-  ParseIntPipe,
+  Get, Post, Delete, Put,
+  Controller, Param, Body,
+  HttpCode, HttpStatus, ParseIntPipe,
 } from '@nestjs/common';
 import { PlayersService } from './players.service';
 // import { Player } from 'src/player/player';
@@ -19,7 +13,7 @@ import { PlayerDto } from 'src/player/player.dto';
 @Controller('/players')
 export class PlayersController {
   constructor(private readonly PlayersService: PlayersService) { }
-  
+
   @Get()
   getPlayers(): Promise<Player[]> {
     return this.PlayersService.getPlayers();

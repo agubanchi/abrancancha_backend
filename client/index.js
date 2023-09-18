@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const BASE_END_POINT = '/players';
 
 //-----------------------------------------------------------------------------
@@ -38,8 +39,7 @@ function actualizarTabla(players) {
     const cellEmail = row.insertCell(3);
     const cellTelefono = row.insertCell(4);
     const cellCategoria = row.insertCell(5);
-    const cellAvatar = row.insertCell(6);
-    const cellAcciones = row.insertCell(7);
+    const cellAcciones = row.insertCell(6);
 
     cellId.innerHTML = player.id;
     cellNombre.innerHTML = player.nombre;
@@ -47,9 +47,10 @@ function actualizarTabla(players) {
     cellEmail.innerHTML = player.email;
     cellTelefono.innerHTML = player.telefono;
     cellCategoria.innerHTML = player.categoria;
-    cellAvatar.innerHTML = `<img src="${player.avatar}" alt="${player.nombre}">`;
-    cellAcciones.innerHTML = `<button type="button" class="edit btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-player-id="${player.id}">Edit</button>
-  <button class="btn btn-danger botonBorrar" data-player-id="${player.id}">Borrar</button>
+
+    cellAcciones.innerHTML = `<button type="button" class="edit btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-player-id="${player.id}"><i class="fa-regular fa-pen-to-square"></i></button>
+  <button class="btn btn-danger botonBorrar" data-player-id="${player.id}"><i class="fa-solid fa-trash"></i></button>
+  <button type="button" class="view btn btn-info" data-bs-toggle="modal" data-bs-target="#viewModal" data-player-id="${player.id}"><i class="fa-regular fa-eye" style="color:#fff"></i></button>
 `;
   });
 }
@@ -244,7 +245,7 @@ editButtons.forEach((button) => {
         telefono: telInput.value,
         categoria: catInput.value,
       };
-      // fetch(`http://localhost:3030/padelplayers/${playerId}`, {
+
       fetch(`${BASE_END_POINT}/${playerId}`, {
         method: 'PATCH',
         headers: {
@@ -271,25 +272,49 @@ editButtons.forEach((button) => {
   });
 });
 
+const viewButtons = tab.querySelectorAll('.view');
+
+viewButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const playerId = button.getAttribute('data-player-id');
+    const player = players.find((p) => p.id === parseInt(playerId));
+
+    if (player) {
+      const nombreView = document.getElementById('nombreView');
+      nombreView.textContent = player.nombre;
+
+      const apellidoView = document.getElementById('apellidoView');
+      apellidoView.textContent = player.apellido;
+
+      const emailView = document.getElementById('emailView');
+      emailView.textContent = player.email;
+
+      const telView = document.getElementById('telView');
+      telView.textContent = player.telefono;
+
+      const catView = document.getElementById('catView');
+      catView.textContent = player.categoria;
+
+      const avatarView = document.getElementById('avatarView');
+      avatarView.innerHTML = `<img src="${player.avatar}" alt="${player.nombre}">`;
+    } else {
+      console.error(`Player with ID ${playerId} not found`);
+    }
+  });
+});
+
+// ...
+
 // Event listener para el botón "editar" en cada fila de la tabla
 document.addEventListener('click', async function (event) {
   if (event.target.classList.contains('botonEditar')) {
     const playerId = event.target.getAttribute('data-player-id');
-    /* confirm('¿Estás seguro de que quieres editar este jugador?') */
     if (
       playerId &&
-      Swal.fire({
-        title: 'Edicion',
-        text: "¿Estás seguro de que quieres editar este jugador",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes!'
-      })
+      confirm('¿Estás seguro de que quieres editar este jugador?')
     ) {
       try {
-        const newData = obtenerNuevosDatos(playerId); // Implementa esta función para obtener los nuevos datos del jugador
+        const newData = obtenerNuevosDatos(); // Implementa esta función para obtener los nuevos datos del jugador
         await editarPlayer(playerId, newData);
       } catch (error) {
         console.error(error);
@@ -298,28 +323,6 @@ document.addEventListener('click', async function (event) {
     }
   }
 });
-
-async function obtenerNuevosDatos(playerId) {
-  try {
-    const response = await fetch(`${BASE_END_POINT}/${playerId}`);
-    if (response.ok) {
-      // const tabla = document.getElementById('tabla').getElementsByTagName('tbody')[0];
-      // tabla.forEach(row => {/**si la columna del id de la fila actual es la q busco copiar los datos y salir del for */      });
-      const player = await response.json();
-      document.getElementById('nombre').value = player.nombre;
-      document.getElementById('apellido').value = player.apellido;
-      document.getElementById('email').value = player.email;
-      document.getElementById('telefono').value = player.telefono;
-      document.getElementById('categoria').value = player.categoria;
-      // TODO:  Actualizar el texto del boton y guardar el id en edicion.
-
-    } else {
-      Swal.fire(response.status, response.statusText, 'error');
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
 
 // Función para editar un jugador
 async function editarPlayer(playerId, newData) {
@@ -348,3 +351,4 @@ async function editarPlayer(playerId, newData) {
     throw error; // Propaga el error para que el event listener lo maneje
   }
 }
+
