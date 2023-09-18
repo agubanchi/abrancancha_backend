@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const BASE_END_POINT = '/players';
 
 //-----------------------------------------------------------------------------
@@ -287,7 +288,7 @@ function actualizarTabla(players) {
               'El jugador fue Actualizado con éxito',
               'success',
             );
-
+            consultarPlayers();
             nombreElement.textContent = updatedUser.nombre;
             apellidoElement.textContent = updatedUser.apellido;
             emailElement.textContent = updatedUser.email;

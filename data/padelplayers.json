@@ -1,49 +1,22 @@
 {
   "padelplayers": [
     {
-      "nombre": "pepe",
-      "apellido": "García",
-      "email": "sofia.garcia@example.com",
-      "telefono": 2345678901,
-      "categoria": 1,
-      "avatar": "https://i.pravatar.cc/300?img=6",
-      "id": 8
-    },
-    {
       "id": 9,
-      "nombre": "Javier",
+      "nombre": "Javier Carlos",
       "apellido": "Lara",
       "email": "javier.lara@example.com",
-      "telefono": 8901234567,
-      "categoria": 1,
+      "telefono": "8901234567",
+      "categoria": "1",
       "avatar": "https://i.pravatar.cc/300?img=9"
     },
     {
       "id": 11,
-      "nombre": "Miguel Angel",
+      "nombre": "Miguel Juan",
       "apellido": "Romero",
       "email": "miguel.romero@example.com",
       "telefono": "9012345678",
       "categoria": "2",
       "avatar": "https://i.pravatar.cc/300?img=11"
-    },
-    {
-      "id": 12,
-      "nombre": "Carmen",
-      "apellido": "Ortega",
-      "email": "carmen.ortega@example.com",
-      "telefono": 5678901234,
-      "categoria": 1,
-      "avatar": "https://i.pravatar.cc/300?img=12"
-    },
-    {
-      "id": 13,
-      "nombre": "Luis",
-      "apellido": "Gómez",
-      "email": "luis.gomez@example.com",
-      "telefono": 1234567890,
-      "categoria": 3,
-      "avatar": "https://i.pravatar.cc/300?img=13"
     },
     {
       "id": 14,
@@ -57,10 +30,10 @@
     {
       "id": 15,
       "nombre": "Pablo",
-      "apellido": "Fuentes",
+      "apellido": "Hernandez",
       "email": "pablo.fuentes@example.com",
-      "telefono": 5551234567,
-      "categoria": 1,
+      "telefono": "5551234567",
+      "categoria": "1",
       "avatar": "https://i.pravatar.cc/300?img=15"
     },
     {
