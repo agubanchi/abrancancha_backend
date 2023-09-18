@@ -1,275 +1,220 @@
 {
-  "padelplayers":
-  [
-      {
-          "id": 1,
-          "nombre": "Juan",
-          "apellido": "González",
-          "email": "juan.gonzalez@example.com",
-          "telefono": 1234567890,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=1"
-      },
-      {
-          "id": 2,
-          "nombre": "María",
-          "apellido": "López",
-          "email": "maria.lopez@example.com",
-          "telefono": 9876543210,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=2"
-      },
-      {
-          "id": 3,
-          "nombre": "Carlos",
-          "apellido": "Martínez",
-          "email": "carlos.martinez@example.com",
-          "telefono": 5551234567,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=3"
-      },
-      {
-          "id": 4,
-          "nombre": "Laura",
-          "apellido": "Pérez",
-          "email": "laura.perez@example.com",
-          "telefono": 1239874560,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=4"
-      },
-      {
-          "id": 5,
-          "nombre": "Pedro",
-          "apellido": "Rodríguez",
-          "email": "pedro.rodriguez@example.com",
-          "telefono": 7890123456,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=5"
-      },
-      {
-          "id": 6,
-          "nombre": "Sofía",
-          "apellido": "García",
-          "email": "sofia.garcia@example.com",
-          "telefono": 2345678901,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=6"
-      },
-      {
-          "id": 7,
-          "nombre": "Manuel",
-          "apellido": "Fernández",
-          "email": "manuel.fernandez@example.com",
-          "telefono": 6789012345,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=7"
-      },
-      {
-          "id": 8,
-          "nombre": "Elena",
-          "apellido": "Sánchez",
-          "email": "elena.sanchez@example.com",
-          "telefono": 3456789012,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=8"
-      },
-      {
-          "id": 9,
-          "nombre": "Javier",
-          "apellido": "Lara",
-          "email": "javier.lara@example.com",
-          "telefono": 8901234567,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=9"
-      },
-      {
-          "id": 10,
-          "nombre": "Isabel",
-          "apellido": "Díaz",
-          "email": "isabel.diaz@example.com",
-          "telefono": 4567890123,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=10"
-      },
-      {
-          "id": 11,
-          "nombre": "Miguel",
-          "apellido": "Romero",
-          "email": "miguel.romero@example.com",
-          "telefono": 9012345678,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=11"
-      },
-      {
-          "id": 12,
-          "nombre": "Carmen",
-          "apellido": "Ortega",
-          "email": "carmen.ortega@example.com",
-          "telefono": 5678901234,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=12"
-      },
-      {
-          "id": 13,
-          "nombre": "Luis",
-          "apellido": "Gómez",
-          "email": "luis.gomez@example.com",
-          "telefono": 1234567890,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=13"
-      },
-      {
-          "id": 14,
-          "nombre": "Ana",
-          "apellido": "Hernández",
-          "email": "ana.hernandez@example.com",
-          "telefono": 9876543210,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=14"
-      },
-      {
-          "id": 15,
-          "nombre": "Pablo",
-          "apellido": "Fuentes",
-          "email": "pablo.fuentes@example.com",
-          "telefono": 5551234567,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=15"
-      },
-      {
-          "id": 16,
-          "nombre": "Rosa",
-          "apellido": "Santos",
-          "email": "rosa.santos@example.com",
-          "telefono": 1239874560,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=16"
-      },
-      {
-          "id": 17,
-          "nombre": "Antonio",
-          "apellido": "Cruz",
-          "email": "antonio.cruz@example.com",
-          "telefono": 7890123456,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=17"
-      },
-      {
-          "id": 18,
-          "nombre": "Marta",
-          "apellido": "Molina",
-          "email": "marta.molina@example.com",
-          "telefono": 2345678901,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=18"
-      },
-      {
-          "id": 19,
-          "nombre": "Fernando",
-          "apellido": "Vargas",
-          "email": "fernando.vargas@example.com",
-          "telefono": 6789012345,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=19"
-      },
-      {
-          "id": 20,
-          "nombre": "Sara",
-          "apellido": "Rivas",
-          "email": "sara.rivas@example.com",
-          "telefono": 3456789012,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=20"
-      },
-      {
-          "id": 21,
-          "nombre": "David",
-          "apellido": "Silva",
-          "email": "david.silva@example.com",
-          "telefono": 8901234567,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=21"
-      },
-      {
-          "id": 22,
-          "nombre": "Eva",
-          "apellido": "Navarro",
-          "email": "eva.navarro@example.com",
-          "telefono": 4567890123,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=22"
-      },
-      {
-          "id": 23,
-          "nombre": "Andrés",
-          "apellido": "Paredes",
-          "email": "andres.paredes@example.com",
-          "telefono": 9012345678,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=23"
-      },
-      {
-          "id": 24,
-          "nombre": "Beatriz",
-          "apellido": "Lara",
-          "email": "beatriz.lara@example.com",
-          "telefono": 5678901234,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=24"
-      },
-      {
-          "id": 25,
-          "nombre": "José",
-          "apellido": "Gómez",
-          "email": "jose.gomez@example.com",
-          "telefono": 1234567890,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=25"
-      },
-      {
-          "id": 26,
-          "nombre": "Cristina",
-          "apellido": "Hernández",
-          "email": "cristina.hernandez@example.com",
-          "telefono": 9876543210,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=26"
-      },
-      {
-          "id": 27,
-          "nombre": "Rafael",
-          "apellido": "Fernández",
-          "email": "rafael.fernandez@example.com",
-          "telefono": 5551234567,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=27"
-      },
-      {
-          "id": 28,
-          "nombre": "Elena",
-          "apellido": "Pérez",
-          "email": "elena.perez@example.com",
-          "telefono": 1239874560,
-          "categoria": 3,
-          "avatar": "https://i.pravatar.cc/300?img=28"
-      },
-      {
-          "id": 29,
-          "nombre": "Juan",
-          "apellido": "Rodríguez",
-          "email": "juan.rodriguez@example.com",
-          "telefono": 7890123456,
-          "categoria": 2,
-          "avatar": "https://i.pravatar.cc/300?img=29"
-      },
-      {
-          "id": 30,
-          "nombre": "María",
-          "apellido": "Sánchez",
-          "email": "maria.sanchez@example.com",
-          "telefono": 2345678901,
-          "categoria": 1,
-          "avatar": "https://i.pravatar.cc/300?img=30"
-      }
+  "padelplayers": [
+    {
+      "nombre": "pepe",
+      "apellido": "García",
+      "email": "sofia.garcia@example.com",
+      "telefono": 2345678901,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=6",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "nombre": "Javier",
+      "apellido": "Lara",
+      "email": "javier.lara@example.com",
+      "telefono": 8901234567,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=9"
+    },
+    {
+      "id": 11,
+      "nombre": "Miguel Angel",
+      "apellido": "Romero",
+      "email": "miguel.romero@example.com",
+      "telefono": "9012345678",
+      "categoria": "2",
+      "avatar": "https://i.pravatar.cc/300?img=11"
+    },
+    {
+      "id": 12,
+      "nombre": "Carmen",
+      "apellido": "Ortega",
+      "email": "carmen.ortega@example.com",
+      "telefono": 5678901234,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=12"
+    },
+    {
+      "id": 13,
+      "nombre": "Luis",
+      "apellido": "Gómez",
+      "email": "luis.gomez@example.com",
+      "telefono": 1234567890,
+      "categoria": 3,
+      "avatar": "https://i.pravatar.cc/300?img=13"
+    },
+    {
+      "id": 14,
+      "nombre": "Ana",
+      "apellido": "Hernández",
+      "email": "ana.hernandez@example.com",
+      "telefono": 9876543210,
+      "categoria": 2,
+      "avatar": "https://i.pravatar.cc/300?img=14"
+    },
+    {
+      "id": 15,
+      "nombre": "Pablo",
+      "apellido": "Fuentes",
+      "email": "pablo.fuentes@example.com",
+      "telefono": 5551234567,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=15"
+    },
+    {
+      "id": 17,
+      "nombre": "Antonio",
+      "apellido": "Cruz",
+      "email": "antonio.cruz@example.com",
+      "telefono": 7890123456,
+      "categoria": 2,
+      "avatar": "https://i.pravatar.cc/300?img=17"
+    },
+    {
+      "id": 18,
+      "nombre": "Marta",
+      "apellido": "Molina",
+      "email": "marta.molina@example.com",
+      "telefono": 2345678901,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=18"
+    },
+    {
+      "id": 19,
+      "nombre": "Fernando",
+      "apellido": "Vargas",
+      "email": "fernando.vargas@example.com",
+      "telefono": 6789012345,
+      "categoria": 3,
+      "avatar": "https://i.pravatar.cc/300?img=19"
+    },
+    {
+      "id": 20,
+      "nombre": "Sara",
+      "apellido": "Rivas",
+      "email": "sara.rivas@example.com",
+      "telefono": 3456789012,
+      "categoria": 2,
+      "avatar": "https://i.pravatar.cc/300?img=20"
+    },
+    {
+      "id": 21,
+      "nombre": "David",
+      "apellido": "Silva",
+      "email": "david.silva@example.com",
+      "telefono": 8901234567,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=21"
+    },
+    {
+      "id": 22,
+      "nombre": "Eva",
+      "apellido": "Navarro",
+      "email": "eva.navarro@example.com",
+      "telefono": 4567890123,
+      "categoria": 3,
+      "avatar": "https://i.pravatar.cc/300?img=22"
+    },
+    {
+      "id": 23,
+      "nombre": "Andrés",
+      "apellido": "Paredes",
+      "email": "andres.paredes@example.com",
+      "telefono": 9012345678,
+      "categoria": 2,
+      "avatar": "https://i.pravatar.cc/300?img=23"
+    },
+    {
+      "id": 24,
+      "nombre": "Beatriz",
+      "apellido": "Lara",
+      "email": "beatriz.lara@example.com",
+      "telefono": 5678901234,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=24"
+    },
+    {
+      "id": 25,
+      "nombre": "José",
+      "apellido": "Gómez",
+      "email": "jose.gomez@example.com",
+      "telefono": 1234567890,
+      "categoria": 3,
+      "avatar": "https://i.pravatar.cc/300?img=25"
+    },
+    {
+      "id": 27,
+      "nombre": "Rafael",
+      "apellido": "Fernández",
+      "email": "rafael.fernandez@example.com",
+      "telefono": 5551234567,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=27"
+    },
+    {
+      "id": 29,
+      "nombre": "Juan",
+      "apellido": "Rodríguez",
+      "email": "juan.rodriguez@example.com",
+      "telefono": 7890123456,
+      "categoria": 2,
+      "avatar": "https://i.pravatar.cc/300?img=29"
+    },
+    {
+      "id": 30,
+      "nombre": "María",
+      "apellido": "Sánchez",
+      "email": "maria.sanchez@example.com",
+      "telefono": 2345678901,
+      "categoria": 1,
+      "avatar": "https://i.pravatar.cc/300?img=30"
+    },
+    {
+      "id": 32,
+      "nombre": "Agustin",
+      "apellido": "Banchi",
+      "email": "agu.banchi@gmail.com",
+      "telefono": 567666,
+      "categoria": 3,
+      "avatar": "https://i.pravatar.cc/200?img=32"
+    },
+    {
+      "id": 33,
+      "nombre": "Marta",
+      "apellido": "Perez",
+      "email": "m.perez@example.com",
+      "telefono": 55555,
+      "categoria": 3,
+      "avatar": "https://i.pravatar.cc/200?img=33"
+    },
+    {
+      "id": 34,
+      "nombre": "Marta",
+      "apellido": "Perez",
+      "email": "m.perez@example.com",
+      "telefono": 55555,
+      "categoria": 44,
+      "avatar": "https://i.pravatar.cc/200?img=34"
+    },
+    {
+      "id": 35,
+      "nombre": "Juana",
+      "apellido": "Gracia",
+      "email": "jgarcia@example.com",
+      "telefono": 22443131,
+      "categoria": 7,
+      "avatar": "https://i.pravatar.cc/200?img=35"
+    },
+    {
+      "id": 36,
+      "nombre": "Juana",
+      "apellido": "Gracia",
+      "email": "jgarcia@example.com",
+      "telefono": 22443131,
+      "categoria": 7,
+      "avatar": "https://i.pravatar.cc/200?img=36"
+    }
   ]
-  }
+}

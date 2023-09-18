@@ -45,12 +45,13 @@ h2 {
   color: orange;
 }
 
-h3 {
+.card h3 {
+  font-family: 'Bebas Neue', sans-serif;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 18px;
   line-height: 30px;
   text-align: center;
-  color: #407be9;
+  color: #77da7e;
 }
 
 h4 {
@@ -84,14 +85,6 @@ img {
 .button_content {
   display: inline-block;
   text-align: center;
-}
-
-.delete {
-  background-color: rgb(175, 38, 38);
-}
-
-.edit {
-  background-color: rgb(38, 141, 175);
 }
 
 .add {
@@ -139,4 +132,12 @@ img {
 }
 img {
   width: 100%;
+}
+
+.card {
+  text-align: center;
+}
+
+.card img {
+  min-width: 250px;
 }

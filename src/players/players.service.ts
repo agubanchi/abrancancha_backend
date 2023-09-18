@@ -22,8 +22,9 @@ export class PlayersService {
   }
 
   // async setNewPlayer(player: Player) {  /* <-- sugerencia de nombre alternativo.---- */
-  // async createPlayer(player: PlayerDto) { /*<- no funciona */
-  async createPlayer(player: Player) {
+  async createPlayer(player: PlayerDto) {
+    /*<- no funciona */
+    // async createPlayer(player: Player) {
     const id = await this.setNewId();
     const avatar = `https://i.pravatar.cc/200?img=${id}`; //<-esta pagina solo soporta 70 como maximo id.--------
     const newPlayer = { id, ...player, avatar };
