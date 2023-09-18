@@ -4,6 +4,7 @@ import { PlayerDto } from 'src/player/player.dto';
 // import { Player } from 'src/player/player';
 import { Player } from 'src/player/player.interface';
 const BASE_URL = 'http://localhost:3030/padelplayers/';
+// const BASE_URL = 'https://647684449233e82dd53a14ea.mockapi.io/players/';
 
 @Injectable()
 export class PlayersService {
@@ -22,10 +23,11 @@ export class PlayersService {
   }
 
   // async setNewPlayer(player: Player) {  /* <-- sugerencia de nombre alternativo.---- */
-  async createPlayer(player: PlayerDto) { /*<- no funciona */ 
-  // async createPlayer(player: Player) {
+  async createPlayer(player: PlayerDto) { /*<- no funciona */
+    // async createPlayer(player: Player) {
     const id = await this.setNewId();
-    const avatar = `https://i.pravatar.cc/200?img=${id}`; //<-esta pagina solo soporta 70 como maximo id.--------
+    // const avatar = `https://i.pravatar.cc/200?img=${id}`; //<-esta pagina solo soporta 70 como maximo id.--------
+    const avatar = `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${id}.jpg`; //<-esta pagina solo soporta 70 como maximo id.--------
     const newPlayer = { id, ...player, avatar };
 
     const res = await fetch(BASE_URL, {
@@ -51,20 +53,17 @@ export class PlayersService {
     const parsed = await res.json();
     return parsed;
   }
-  async updatePlayersById(id:number ,body:Player):Promise<void>{
-    const isPlayer=await this.getPlayersById(id);
-    if(!Object.keys(isPlayer).length)return;
-    const updatePlayer={...body,id};
-    console.log('updatePlayer',updatePlayer);
-    const res =await fetch(BASE_URL +id,{
-      method:'PUT',
-      headers:{
-        'Content-Type':'aplication/json',
-      },
-      body:JSON.stringify(updatePlayer),
+  async updatePlayersById(id: number, body: Player): Promise<void> {
+    const isPlayer = await this.getPlayersById(id);
+    if (!Object.keys(isPlayer).length) return;
+    const updatePlayer = { ...body, id };
+    console.log('updatePlayer', updatePlayer);
+    const res = await fetch(BASE_URL + id, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'aplication/json', },
+      body: JSON.stringify(updatePlayer),
     });
-    const parsed =await res.json();
+    const parsed = await res.json();
     return parsed;
-    
   }
 }

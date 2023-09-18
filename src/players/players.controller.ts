@@ -19,6 +19,7 @@ import { PlayerDto } from 'src/player/player.dto';
 @Controller('/players')
 export class PlayersController {
   constructor(private readonly PlayersService: PlayersService) { }
+  
   @Get()
   getPlayers(): Promise<Player[]> {
     return this.PlayersService.getPlayers();
@@ -47,7 +48,7 @@ export class PlayersController {
       errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
     })) id: number): Promise<void> {
     return this.PlayersService.deletePlayersById(id);
-  }/*  */
+  }
 
   @Put(':id')
   @HttpCode(HttpStatus.NO_CONTENT)  // @HttpCode(204)
