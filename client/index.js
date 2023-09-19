@@ -103,6 +103,49 @@ function actualizarTabla(players) {
     // actualizarTabla();
   }
 
+  function isValidForm({ nombre, apellido, email, telefono, categoria }) {
+    let soloLetrasRegex = /^[A-Za-z]+$/;
+    // let soloEmailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    let soloEmailRegex =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    // console.log(nombre, "-",apellido, "-", email,  "-",telefono,  "-",categoria);
+    const errorMessage = document.getElementById('errorMessage');
+    errorMessage.innerText = '';
+    if (nombre === '')
+      errorMessage.innerText += 'El nombre no puede estar vacio.\n';
+    else if (!soloLetrasRegex.test(nombre))
+      errorMessage.innerText +=
+        'El nombre solo acepta caracteres alfabeticos.\n';
+
+    if (apellido === '')
+      errorMessage.innerText += 'El apellido no puede estar vacio.\n';
+    else if (!soloLetrasRegex.test(apellido))
+      errorMessage.innerText +=
+        'El apellido solo acepta caracteres alfabeticos.\n';
+
+    if (email === '')
+      errorMessage.innerText += 'El email no puede estar vacio.\n';
+    else if (!soloEmailRegex.test(email))
+      errorMessage.innerText += 'No es un email válido.\n';
+
+    if (telefono === 0)
+      errorMessage.innerText += 'El telefono no puede estar vacio.\n';
+    else if (isNaN(telefono))
+      errorMessage.innerText += 'El telefono solo acepta numeros.\n';
+
+    if (categoria === 0)
+      errorMessage.innerText += 'La categoria no puede estar vacia.\n';
+    else if (isNaN(categoria))
+      errorMessage.innerText += 'La categoria solo acepta numeros.\n';
+
+    if (errorMessage.innerText !== '') {
+      errorMessage.innerText =
+        'Corregir los siguientes Errores: \n' + errorMessage.innerText;
+      return false;
+    }
+    return true;
+  }
+
   // ...
 
   // Event listener para el botón "Borrar" en cada fila de la tabla
@@ -146,7 +189,8 @@ function actualizarTabla(players) {
     button.addEventListener('click', () => {
       const row = button.closest('tr');
       const cells = row.querySelectorAll('td');
-      const playerId = event.target.getAttribute('data-player-id');
+      const playerId = button.getAttribute('data-player-id');
+
       const nombreElement = cells[1];
       const apellidoElement = cells[2];
       const emailElement = cells[3];
@@ -185,7 +229,7 @@ function actualizarTabla(players) {
           categoria: catInput.value,
         };
 
-        fetch(`${BASE_END_POINT}/${playerId}`, {
+        fetch(`http://localhost:3030/padelplayers/${playerId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
