@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {
-  Get, Post, Delete, Put,
+  Get, Post, Delete, Put, Patch,
   Controller, Param, Body,
   HttpCode, HttpStatus, ParseIntPipe,
 } from '@nestjs/common';
@@ -8,6 +8,7 @@ import { PlayersService } from './players.service';
 // import { Player } from 'src/player/player';
 import { Player } from 'src/player/player.interface';
 import { PlayerDto } from 'src/player/player.dto';
+
 @Controller('/players')
 export class PlayersController {
   constructor(private readonly PlayersService: PlayersService) { }
@@ -41,11 +42,21 @@ export class PlayersController {
 
   @Put(':id')
   @HttpCode(HttpStatus.NO_CONTENT) // @HttpCode(204)
+  replacePlayersByid(
+    @Param('id', new ParseIntPipe({
+      errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
+    })) id: number,
+    @Body() playerDto: PlayerDto): Promise<void> {
+    return this.PlayersService.replacePlayersByid(id, playerDto);
+  }
+
+  @Patch(':id')
+  @HttpCode(HttpStatus.NO_CONTENT) // @HttpCode(204)
   updatePlayersByid(
     @Param('id', new ParseIntPipe({
       errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
     })) id: number,
-    @Body() body): Promise<void> {
-    return this.PlayersService.updatePlayersById(id, body);
+    @Body() playerDto: PlayerDto): Promise<void> {
+    return this.PlayersService.updatePlayersById(id, playerDto);
   }
 }
