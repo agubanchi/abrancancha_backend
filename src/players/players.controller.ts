@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   Get, Post, Delete, Put,
@@ -21,6 +20,11 @@ export class PlayersController {
   @Get(':id')
   // getPlayersById(@Param('id', ParseIntPipe) id: number): Promise<Player[]> {
   getPlayersById(
+    @Param('id', new ParseIntPipe({
+      errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
+    })
+    ) id: number): Promise<Player[]> {
+
     @Param('id', new ParseIntPipe({
       errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
     })
