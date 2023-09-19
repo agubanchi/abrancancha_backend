@@ -74,7 +74,7 @@ function actualizarTabla(players) {
     // Agregar player al array
     // players.push(player);
     try {
-      const response = await fetch(BASE_END_POINT, {
+      const response = await fetch(`${BASE_END_POINT}`, {
         method: 'POST',
         headers: CONTENT_TYPE_APPLICATION_JSON,
         body: JSON.stringify(player),

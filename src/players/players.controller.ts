@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prettier/prettier */
 import {
   Get, Post, Delete, Put, Patch,
   Controller, Param, Body,
@@ -43,20 +44,30 @@ export class PlayersController {
   @Put(':id')
   @HttpCode(HttpStatus.NO_CONTENT) // @HttpCode(204)
   replacePlayersByid(
-    @Param('id', new ParseIntPipe({
-      errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
-    })) id: number,
-    @Body() playerDto: PlayerDto): Promise<void> {
+    @Param(
+      'id',
+      new ParseIntPipe({
+        errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE,
+      }),
+    )
+    id: number,
+    @Body() playerDto: PlayerDto,
+  ): Promise<void> {
     return this.PlayersService.replacePlayersByid(id, playerDto);
   }
 
   @Patch(':id')
   @HttpCode(HttpStatus.NO_CONTENT) // @HttpCode(204)
   updatePlayersByid(
-    @Param('id', new ParseIntPipe({
-      errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
-    })) id: number,
-    @Body() playerDto: PlayerDto): Promise<void> {
+    @Param(
+      'id',
+      new ParseIntPipe({
+        errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE,
+      }),
+    )
+    id: number,
+    @Body() playerDto: PlayerDto,
+  ): Promise<void> {
     return this.PlayersService.updatePlayersById(id, playerDto);
   }
 }

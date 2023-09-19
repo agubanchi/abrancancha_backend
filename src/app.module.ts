@@ -9,8 +9,9 @@ import { PlayersService } from './players/players.service';
   imports: [
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'client'),
-      serveRoot: '/' /** para que los endpoints incorrectos no redirijan al home */
-    }),/* PlayerModule, */
+      serveRoot:
+        '/' /** para que los endpoints incorrectos no redirijan al home */,
+    }) /* PlayerModule, */,
   ],
   controllers: [/* AppController, */ PlayersController],
   providers: [/* AppService, */ PlayersService],

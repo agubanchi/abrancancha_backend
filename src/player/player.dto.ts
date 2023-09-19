@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // npm install class-validator class-transformer
 import { Type } from 'class-transformer';
 import {
