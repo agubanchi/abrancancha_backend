@@ -229,7 +229,7 @@ function actualizarTabla(players) {
           categoria: catInput.value,
         };
 
-        fetch(`http://localhost:3030/padelplayers/${playerId}`, {
+        fetch(`${BASE_END_POINT}/${playerId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',

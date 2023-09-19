@@ -4,6 +4,10 @@ import { PlayerDto } from 'src/player/player.dto';
 // import { Player } from 'src/player/player';
 import { Player } from 'src/player/player.interface';
 const BASE_URL = 'http://localhost:3030/padelplayers/';
+export const CONTENT_TYPE_APPLICATION_JSON = {
+  'Content-Type': 'application/json',
+};
+
 @Injectable()
 export class PlayersService {
   async getPlayers(): Promise<Player[]> {
@@ -46,32 +50,37 @@ export class PlayersService {
     const parsed = await res.json();
     return parsed;
   }
-  async updatePlayerById(id: number, playerDto: PlayerDto): Promise<void> {
+  async replacePlayersByid(id: number, playerDto: PlayerDto): Promise<void> {
     const isPlayer = await this.getPlayersById(id);
-    if (!Object.keys(isPlayer).length) return;
+    if (!Object.keys(isPlayer).length)
+      throw new NotFoundException(
+        `Imposible editar. El jugador con id ${id} no existe.`,
+      );
     const updatePlayer = { ...playerDto, id };
     console.log('updatePlayer', updatePlayer);
     const res = await fetch(BASE_URL + id, {
       method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: CONTENT_TYPE_APPLICATION_JSON,
       body: JSON.stringify(updatePlayer),
     });
     const parsed = await res.json();
     return parsed;
   }
-  // alternativa que no funcionó
-  // private async setNewId(): Promise<number> {
-  //   const players: Player[] = await this.getPlayers();
-  //   const lastPlayer1: Player = players.pop();
-  //   const lastPlayer = new Player(...lastPlayer1);
-  //     lastPlayer.setID(resparsed[i].id);
-  //     lastPlayer.setID(resparsed[i].nombre);
-  //     lastPlayer.setApellido(resparsed[i].apellido);
-  //     lastPlayer.setID(resparsed[i].edad);
-  //     lastPlayer.setID(resparsed[i].ciudad);
-  // const id = lastPlayer1.getId() + 1; // <-no funcionó.---
-  // return id;
-  // }
+
+  async updatePlayersById(id: number, playerDto: PlayerDto): Promise<void> {
+    const isPlayer = await this.getPlayersById(id);
+    if (!Object.keys(isPlayer).length)
+      throw new NotFoundException(
+        `Imposible editar. El jugador con id ${id} no existe.`,
+      );
+    const updatePlayer = { ...playerDto, id };
+    console.log('updatePlayer', updatePlayer);
+    const res = await fetch(BASE_URL + id, {
+      method: 'PATCH',
+      headers: CONTENT_TYPE_APPLICATION_JSON,
+      body: JSON.stringify(updatePlayer),
+    });
+    const parsed = await res.json();
+    return parsed;
+  }
 }
