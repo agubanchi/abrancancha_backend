@@ -1,10 +1,9 @@
+/* eslint-disable prettier/prettier */
 // npm install class-validator class-transformer
 import {
   IsString,
   IsNumber,
-  IsPhoneNumber,
   IsEmail,
-  IsUrl,
   IsNotEmpty,
   MaxLength,
   MinLength,
@@ -23,11 +22,9 @@ export class PlayerDto {
   @IsEmail()
   email: string;
   @IsNotEmpty()
-  //@IsPhoneNumber()
+  @IsNumber()
   telefono: number;
   @IsNotEmpty()
   @IsNumber()
   categoria: number;
-  // @IsUrl()
-  // avatar: string;
 }

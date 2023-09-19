@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prettier/prettier */
 import {
   Get,
   Post,
@@ -63,8 +63,8 @@ export class PlayersController {
       }),
     )
     id: number,
-    @Body() body,
+    @Body() playerDto: PlayerDto,
   ): Promise<void> {
-    return this.PlayersService.updatePlayerById(id, body);
+    return this.PlayersService.updatePlayerById(id, playerDto);
   }
 }
