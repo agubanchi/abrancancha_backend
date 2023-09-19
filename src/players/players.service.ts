@@ -60,7 +60,9 @@ export class PlayersService {
     console.log('updatePlayer', updatePlayer);
     const res = await fetch(BASE_URL + id, {
       method: 'PUT',
-      headers: { 'Content-Type': 'aplication/json', },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(updatePlayer),
     });
     const parsed = await res.json();

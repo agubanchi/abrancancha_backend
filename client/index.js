@@ -96,12 +96,55 @@ async function addPlayer() {
     console.error(error);
   }
 
-  // Limpiar el formulario
-  document.getElementById('formulario').reset();
-  // Actualizar la tabla
-  consultarPlayers();
-  // actualizarTabla();
-}
+    // Limpiar el formulario
+    document.getElementById('formulario').reset();
+    // Actualizar la tabla
+    consultarPlayers();
+    // actualizarTabla();
+  }
+
+  function isValidForm({ nombre, apellido, email, telefono, categoria }) {
+    let soloLetrasRegex = /^[A-Za-z]+$/;
+    // let soloEmailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    let soloEmailRegex =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    // console.log(nombre, "-",apellido, "-", email,  "-",telefono,  "-",categoria);
+    const errorMessage = document.getElementById('errorMessage');
+    errorMessage.innerText = '';
+    if (nombre === '')
+      errorMessage.innerText += 'El nombre no puede estar vacio.\n';
+    else if (!soloLetrasRegex.test(nombre))
+      errorMessage.innerText +=
+        'El nombre solo acepta caracteres alfabeticos.\n';
+
+    if (apellido === '')
+      errorMessage.innerText += 'El apellido no puede estar vacio.\n';
+    else if (!soloLetrasRegex.test(apellido))
+      errorMessage.innerText +=
+        'El apellido solo acepta caracteres alfabeticos.\n';
+
+    if (email === '')
+      errorMessage.innerText += 'El email no puede estar vacio.\n';
+    else if (!soloEmailRegex.test(email))
+      errorMessage.innerText += 'No es un email válido.\n';
+
+    if (telefono === 0)
+      errorMessage.innerText += 'El telefono no puede estar vacio.\n';
+    else if (isNaN(telefono))
+      errorMessage.innerText += 'El telefono solo acepta numeros.\n';
+
+    if (categoria === 0)
+      errorMessage.innerText += 'La categoria no puede estar vacia.\n';
+    else if (isNaN(categoria))
+      errorMessage.innerText += 'La categoria solo acepta numeros.\n';
+
+    if (errorMessage.innerText !== '') {
+      errorMessage.innerText =
+        'Corregir los siguientes Errores: \n' + errorMessage.innerText;
+      return false;
+    }
+    return true;
+  }
 
 function isValidForm({ nombre, apellido, email, telefono, categoria }) {
   let soloLetrasRegex = /^[A-Za-z]+$/;
@@ -183,16 +226,17 @@ async function eliminarPlayer(playerId) {
 const tab = document.getElementById('tabla');
 const editButtons = tab.querySelectorAll('.edit');
 
-editButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const row = button.closest('tr');
-    const cells = row.querySelectorAll('td');
-    const playerId = event.target.getAttribute('data-player-id');
-    const nombreElement = cells[1];
-    const apellidoElement = cells[2];
-    const emailElement = cells[3];
-    const telElement = cells[4];
-    const catElement = cells[5];
+  editButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const row = button.closest('tr');
+      const cells = row.querySelectorAll('td');
+      const playerId = button.getAttribute('data-player-id');
+
+      const nombreElement = cells[1];
+      const apellidoElement = cells[2];
+      const emailElement = cells[3];
+      const telElement = cells[4];
+      const catElement = cells[5];
 
     const nombreInput = document.getElementById('nombreEdit');
     nombreInput.type = 'text';
@@ -226,31 +270,31 @@ editButtons.forEach((button) => {
         categoria: catInput.value,
       };
 
-      fetch(`${BASE_END_POINT}/${playerId}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedUser),
-      })
-        .then((res) => res.json())
-        .then(() => {
-          Swal.fire(
-            'Jugador Actualizado',
-            'El jugador fue Actualizado con éxito',
-            'success',
-          );
-          consultarPlayers();
-          nombreElement.textContent = updatedUser.nombre;
-          apellidoElement.textContent = updatedUser.apellido;
-          emailElement.textContent = updatedUser.email;
-          telElement.textContent = updatedUser.telefono;
-          catElement.textContent = updatedUser.categoria;
+        fetch(`http://localhost:3030/padelplayers/${playerId}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(updatedUser),
         })
-        .catch((err) => console.log(err));
+          .then((res) => res.json())
+          .then(() => {
+            Swal.fire(
+              'Jugador Actualizado',
+              'El jugador fue Actualizado con éxito',
+              'success',
+            );
+            consultarPlayers();
+            nombreElement.textContent = updatedUser.nombre;
+            apellidoElement.textContent = updatedUser.apellido;
+            emailElement.textContent = updatedUser.email;
+            telElement.textContent = updatedUser.telefono;
+            catElement.textContent = updatedUser.categoria;
+          })
+          .catch((err) => console.log(err));
+      });
     });
   });
-});
 
 const viewButtons = tab.querySelectorAll('.view');
 
