@@ -48,62 +48,104 @@ function actualizarTabla(players) {
     cellTelefono.innerHTML = player.telefono;
     cellCategoria.innerHTML = player.categoria;
 
-    cellAcciones.innerHTML = `<button type="button" class="edit btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-player-id="${player.id}"><i class="fa-regular fa-pen-to-square"></i></button>
+    cellAcciones.innerHTML = `
+  <button type="button" class="edit btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-player-id="${player.id}"><i class="fa-regular fa-pen-to-square"></i></button>
   <button class="btn btn-danger botonBorrar" data-player-id="${player.id}"><i class="fa-solid fa-trash"></i></button>
   <button type="button" class="view btn btn-info" data-bs-toggle="modal" data-bs-target="#viewModal" data-player-id="${player.id}"><i class="fa-regular fa-eye" style="color:#fff"></i></button>
 `;
   });
+}
+//-----------------------------------------------------------------------------
+// Array para almacenar las players
+// const players = [];
+document.getElementById('addPlayer').addEventListener('click', addPlayer);
+// Función para agregar una player a la tabla
+async function addPlayer() {
+  const nombre = String(document.getElementById('nombre').value.trim());
+  const apellido = String(document.getElementById('apellido').value.trim());
+  const email = String(document.getElementById('email').value.trim());
+  const telefono = Number(document.getElementById('telefono').value.trim());
+  const categoria = Number(document.getElementById('categoria').value.trim());
 
-  //-----------------------------------------------------------------------------
-  // Array para almacenar las players
-  // const players = [];
-  document.getElementById('addPlayer').addEventListener('click', addPlayer);
-  // Función para agregar una player a la tabla
-  async function addPlayer() {
-    const nombre = String(document.getElementById('nombre').value.trim());
-    const apellido = String(document.getElementById('apellido').value.trim());
-    const email = String(document.getElementById('email').value.trim());
-    const telefono = Number(document.getElementById('telefono').value.trim());
-    const categoria = Number(document.getElementById('categoria').value.trim());
-
-    const player = { nombre, apellido, email, telefono, categoria }; //, avatar
-    // const checkFormEnabled = document.getElementById("checkForm").value
-    const checkFormEnabled = true;
-    if (checkFormEnabled && !isValidForm(player)) return;
-    console.log(JSON.stringify(player));
-    // Agregar player al array
-    // players.push(player);
-    try {
-      const response = await fetch(BASE_END_POINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(player),
+  const player = { nombre, apellido, email, telefono, categoria }; //, avatar
+  // const checkFormEnabled = document.getElementById("checkForm").value
+  const checkFormEnabled = true;
+  if (checkFormEnabled && !isValidForm(player)) return;
+  console.log(JSON.stringify(player));
+  // Agregar player al array
+  // players.push(player);
+  try {
+    const response = await fetch(BASE_END_POINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(player),
+    });
+    if (response.ok) {
+      Swal.fire(
+        'Jugador agregado!',
+        'El jugador fue agregado con éxito',
+        'success',
+      );
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'El jugador no pudo ser agregado con éxito',
       });
-      if (response.ok) {
-        Swal.fire(
-          'Jugador agregado!',
-          'El jugador fue agregado con éxito',
-          'success',
-        );
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'El jugador no pudo ser agregado con éxito',
-        });
-      }
-    } catch (error) {
-      console.error(error);
     }
-
-    // Limpiar el formulario
-    document.getElementById('formulario').reset();
-    // Actualizar la tabla
-    consultarPlayers();
-    // actualizarTabla();
+  } catch (error) {
+    console.error(error);
   }
 
-// ...
+  // Limpiar el formulario
+  document.getElementById('formulario').reset();
+  // Actualizar la tabla
+  consultarPlayers();
+  // actualizarTabla();
+}
+
+function isValidForm({ nombre, apellido, email, telefono, categoria }) {
+  let soloLetrasRegex = /^[A-Za-z]+$/;
+  // let soloEmailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  let soloEmailRegex =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  // console.log(nombre, "-",apellido, "-", email,  "-",telefono,  "-",categoria);
+  const errorMessage = document.getElementById('errorMessage');
+  errorMessage.innerText = '';
+  if (nombre === '')
+    errorMessage.innerText += 'El nombre no puede estar vacio.\n';
+  else if (!soloLetrasRegex.test(nombre))
+    errorMessage.innerText +=
+      'El nombre solo acepta caracteres alfabeticos.\n';
+
+  if (apellido === '')
+    errorMessage.innerText += 'El apellido no puede estar vacio.\n';
+  else if (!soloLetrasRegex.test(apellido))
+    errorMessage.innerText +=
+      'El apellido solo acepta caracteres alfabeticos.\n';
+
+  if (email === '')
+    errorMessage.innerText += 'El email no puede estar vacio.\n';
+  else if (!soloEmailRegex.test(email))
+    errorMessage.innerText += 'No es un email válido.\n';
+
+  if (telefono === 0)
+    errorMessage.innerText += 'El telefono no puede estar vacio.\n';
+  else if (isNaN(telefono))
+    errorMessage.innerText += 'El telefono solo acepta numeros.\n';
+
+  if (categoria === 0)
+    errorMessage.innerText += 'La categoria no puede estar vacia.\n';
+  else if (isNaN(categoria))
+    errorMessage.innerText += 'La categoria solo acepta numeros.\n';
+
+  if (errorMessage.innerText !== '') {
+    errorMessage.innerText =
+      'Corregir los siguientes Errores: \n' + errorMessage.innerText;
+    return false;
+  }
+  return true;
+}
 
 // Event listener para el botón "Borrar" en cada fila de la tabla
 document.addEventListener('click', function (event) {
@@ -185,31 +227,31 @@ editButtons.forEach((button) => {
         categoria: catInput.value,
       };
 
-        fetch(`${BASE_END_POINT}/${playerId}`, {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(updatedUser),
+      fetch(`${BASE_END_POINT}/${playerId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedUser),
+      })
+        .then((res) => res.json())
+        .then(() => {
+          Swal.fire(
+            'Jugador Actualizado',
+            'El jugador fue Actualizado con éxito',
+            'success',
+          );
+          consultarPlayers();
+          nombreElement.textContent = updatedUser.nombre;
+          apellidoElement.textContent = updatedUser.apellido;
+          emailElement.textContent = updatedUser.email;
+          telElement.textContent = updatedUser.telefono;
+          catElement.textContent = updatedUser.categoria;
         })
-          .then((res) => res.json())
-          .then(() => {
-            Swal.fire(
-              'Jugador Actualizado',
-              'El jugador fue Actualizado con éxito',
-              'success',
-            );
-            consultarPlayers();
-            nombreElement.textContent = updatedUser.nombre;
-            apellidoElement.textContent = updatedUser.apellido;
-            emailElement.textContent = updatedUser.email;
-            telElement.textContent = updatedUser.telefono;
-            catElement.textContent = updatedUser.categoria;
-          })
-          .catch((err) => console.log(err));
-      });
+        .catch((err) => console.log(err));
     });
   });
+});
 
 const viewButtons = tab.querySelectorAll('.view');
 
@@ -234,11 +276,57 @@ viewButtons.forEach((button) => {
       const catView = document.getElementById('catView');
       catView.textContent = player.categoria;
 
-        const avatarView = document.getElementById('avatarView');
-        avatarView.innerHTML = `<img src="${player.avatar}" alt="${player.nombre}">`;
-      } else {
-        console.error(`Player with ID ${playerId} not found`);
-      }
-    });
+      const avatarView = document.getElementById('avatarView');
+      avatarView.innerHTML = `<img src="${player.avatar}" alt="${player.nombre}">`;
+    } else {
+      console.error(`Player with ID ${playerId} not found`);
+    }
   });
+});
+
+// Event listener para el botón "editar" en cada fila de la tabla
+document.addEventListener('click', async function (event) {
+  if (event.target.classList.contains('botonEditar')) {
+    const playerId = event.target.getAttribute('data-player-id');
+    if (
+      playerId &&
+      confirm('¿Estás seguro de que quieres editar este jugador?')
+    ) {
+      try {
+        const newData = obtenerNuevosDatos(); // Implementa esta función para obtener los nuevos datos del jugador
+        await editarPlayer(playerId, newData);
+      } catch (error) {
+        console.error(error);
+        Swal.fire('Error', 'No se pudo editar al jugador', 'error');
+      }
+    }
+  }
+});
+
+// Función para editar un jugador
+async function editarPlayer(playerId, newData) {
+  try {
+    const response = await fetch(`${BASE_END_POINT}/${playerId}`, {
+      method: 'PUT', // O utiliza 'PATCH' si solo quieres actualizar ciertos campos
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newData), // newData debe ser un objeto con los datos a actualizar
+    });
+
+    if (response.ok) {
+      Swal.fire(
+        'Jugador editado',
+        'Los datos del jugador fueron actualizados con éxito',
+        'success',
+      );
+      // Actualizar la tabla después de editar
+      consultarPlayers();
+    } else {
+      Swal.fire('Error', 'No se pudo editar al jugador', 'error');
+    }
+  } catch (error) {
+    console.error(error);
+    throw error; // Propaga el error para que el event listener lo maneje
+  }
 }

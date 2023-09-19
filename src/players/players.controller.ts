@@ -24,12 +24,6 @@ export class PlayersController {
       errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
     })
     ) id: number): Promise<Player[]> {
-
-    @Param('id', new ParseIntPipe({
-      errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
-    })
-    ) id: number): Promise<Player[]> {
-
     return this.PlayersService.getPlayersById(id);
   }
 
