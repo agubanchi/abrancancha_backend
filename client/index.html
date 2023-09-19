@@ -1,69 +1,221 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manejador de turnos de canchas" />
+    <link rel="stylesheet" href="css/index.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Manejador de turnos de canchas">
-  <link rel="stylesheet" href="css/index.css">
-  <!-- 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-   -->
-  <title>Abran Cancha</title>
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
 
-<body>
-  <div class="container">
-    <header>
-      <h1>Modulo Jugadores</h1>      
-    </header>
-    <main>
-      <h1>Formulario</h1>
+    <title>Abran Cancha</title>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <header>
+        <h1>Modulo Jugadores</h1>
+      </header>
+
+      <h2>Formulario</h2>
+
       <form id="formulario">
-          <label for="nombre">Nombre: </label>
-          <input type="text" id="nombre" placeholder="Indica tu nombre" required><br><br>
-  
-          <label for="apellido">Apellido:</label>
-          <input type="text" id="apellido" placeholder="Indica tu apellido" required><br><br>
-  
-          <label for="email">Email:</label>
-          <input type="email" id="email" placeholder="Indica tu email de contacto" required><br><br>
-  
-          <label for="telefono">Teléfono:</label>
-          <input type="tel" id="telefono" placeholder="Indica tu numero de contacto" required><br><br>
-  
-          <label for="categoria">Categoría:</label>
-          <input type="number" id="categoria" placeholder="Elija la categoria" required><br><br>
-
-          <p id="errorMessage"></p>
-
-          <!-- <button type="button" onclick="agregarPersona()">Agregar Persona</button> -->
-          <button id="addPlayer" type="button">Agregar Jugador</button>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 g-3">
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                placeholder="Indica tu nombre"
+                required
+              />
+            </div>
+            <div class="col-md-6 g-3">
+              <input
+                type="text"
+                class="form-control"
+                id="apellido"
+                placeholder="Indica tu apellido"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 g-3">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder="Indica tu email de contacto"
+                required
+              />
+            </div>
+            <div class="col-md-6 g-3">
+              <input
+                type="tel"
+                class="form-control"
+                id="telefono"
+                placeholder="Indica tu numero de contacto"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 g-3">
+              <input
+                type="number"
+                class="form-control"
+                id="categoria"
+                placeholder="Elija la categoria"
+                required
+              />
+            </div>
+            <div class="col-md-6 g-3">
+              <button id="addPlayer" type="button">Agregar Jugador</button>
+            </div>
+            <p id="errorMessage"></p>
+          </div>
+        </div>
       </form>
-  
+
       <h1>Tabla de Datos</h1>
-      <table id="tabla">
-          <thead>
-              <tr>
-                  <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Email</th>
-                  <th>Teléfono</th>
-                  <th>Categoría</th>
-                  <th>Avatar</th>
-              </tr>
-          </thead>
-          <tbody>
-              <!-- Los datos se agregarán aquí -->
-          </tbody>
+      <button id="botonConsulta" type="button">Consultar Jugadores</button>
+
+      <table id="tabla" class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+          </tr>
+        </tbody>
       </table>
-    </main>
 
+
+
+<!-- Modal edit -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editModalLabel">Editar usuario:</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">
+          <div class="row">
+        
+        <div id="formEdit" class="col-md-12 form">
+          <div class="col-md-6 g-3">
+          <label for="nombreEdit">Nombre:</label>
+          <input id="nombreEdit" type="text" placeholder="ingrese su nombre"></input>
+        </div>
+        <div class="col-md-6 g-3">
+          <label for="apellidoEdit">Apellido:</label>
+          <input id="apellidoEdit" type="text" placeholder="ingrese su apellido"></input>
+        </div>
+
+        <div class="col-md-6 g-3">
+          <label for="emailEdit">Email:</label>
+          <input id="emailEdit" type="text" placeholder="ingrese su email"></input>
+        </div>
+          <div class="col-md-6 g-3">
+          <label for="telEdit">telefono:</label>
+          <input id="telEdit" type="tel" placeholder="ingrese su telefono"></input>
+        </div>
+          <div class="col-md-6 g-3">
+          <label for="catEdit">categoria:</label>
+          <input id="catEdit" type="number" placeholder="ingrese su categoria"></input>
+        </div>
+          
+      </div>
+      </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success" id="saveEdit" data-usuario-id="">Guardar</button>
+      </div>
+    </div>
   </div>
-  <script src="index.js"></script>
-</body>
+</div>
+    </div>
 
+
+
+<!-- Modal View -->
+<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="viewModalLabel">Detalles de usuario:</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">
+          <div class="row">
+        
+            <div class="card" style="width: 100%;">
+              <div class="avatar card-img-top" id="avatarView"></div>
+              <div class="card-body">
+                <h2>Nombre:</h2>
+                <h5 class="card-title" id="nombreView"></h5>
+                <h2>Apellido:</h2>
+                <h6 class="card-title" id="apellidoView"></h6>
+              </div>
+              <ul class="list-group list-group-flush">
+                <h3>Email:</h3>
+                <li class="list-group-item" id="emailView"></li>
+                <h3>telefono:</h3>
+                <li class="list-group-item" id="telView"></li>
+                <h3>Categoria:</h3>
+                <li class="list-group-item" id="catView"></li>
+              </ul>
+              
+            </div>
+      
+      </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+
+
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/e89cdf5d76.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.10/dist/sweetalert2.all.min.js"></script>
+  </body>
 </html>
