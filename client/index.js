@@ -48,8 +48,7 @@ function actualizarTabla(players) {
     cellTelefono.innerHTML = player.telefono;
     cellCategoria.innerHTML = player.categoria;
 
-    cellAcciones.innerHTML = `
-  <button type="button" class="edit btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-player-id="${player.id}"><i class="fa-regular fa-pen-to-square"></i></button>
+    cellAcciones.innerHTML = `<button type="button" class="edit btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-player-id="${player.id}"><i class="fa-regular fa-pen-to-square"></i></button>
   <button class="btn btn-danger botonBorrar" data-player-id="${player.id}"><i class="fa-solid fa-trash"></i></button>
   <button type="button" class="view btn btn-info" data-bs-toggle="modal" data-bs-target="#viewModal" data-player-id="${player.id}"><i class="fa-regular fa-eye" style="color:#fff"></i></button>
 `;

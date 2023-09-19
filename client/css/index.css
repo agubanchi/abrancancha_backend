@@ -45,12 +45,13 @@ h2 {
   color: orange;
 }
 
-h3 {
+.card h3 {
+  font-family: 'Bebas Neue', sans-serif;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 18px;
   line-height: 30px;
   text-align: center;
-  color: #407be9;
+  color: #77da7e;
 }
 
 h4 {
