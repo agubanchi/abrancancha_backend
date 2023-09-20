@@ -271,7 +271,7 @@ function actualizarTabla(players) {
         };
 
         fetch(`${BASE_END_POINT}/${playerId}`, {
-          method: 'PATCH',
+          method: 'PUT',
           headers: CONTENT_TYPE_APPLICATION_JSON,
           body: JSON.stringify(updatedUser),
         })

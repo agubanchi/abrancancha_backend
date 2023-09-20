@@ -2,11 +2,10 @@
 /* eslint-disable prettier/prettier */
 import {
   Get, Post, Delete, Put, Patch,
-  Controller, Param, Body,
+  Controller, Param, Body, Query,
   HttpCode, HttpStatus, ParseIntPipe,
 } from '@nestjs/common';
 import { PlayersService } from './players.service';
-// import { Player } from 'src/player/player';
 import { Player } from 'src/player/player.interface';
 import { PlayerDto } from 'src/player/player.dto';
 
@@ -18,8 +17,14 @@ export class PlayersController {
   getPlayers(): Promise<Player[]> {
     return this.PlayersService.getPlayers();
   }
+
+  @Get()
+  getPlayerByName(@Query('player') player?: string): Promise<Player[]> {
+    if (!player) return this.PlayersService.getPlayers();
+    return this.PlayersService.getPlayerByName(player)
+  }
+
   @Get(':id')
-  // getPlayersById(@Param('id', ParseIntPipe) id: number): Promise<Player[]> {
   getPlayersById(
     @Param('id', new ParseIntPipe({
       errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE
@@ -27,12 +32,12 @@ export class PlayersController {
     ) id: number): Promise<Player[]> {
     return this.PlayersService.getPlayersById(id);
   }
+
   @Post()
   createPlayer(@Body() playerDto: PlayerDto): Promise<any> {
     return this.PlayersService.createPlayer(playerDto);
-    // createPlayer(@Body() body): Promise<any> {
-    //   return this.PlayersService.createPlayer(body);
   }
+
   @Delete(':id')
   deletePlayerById(
     @Param('id', new ParseIntPipe({
@@ -56,18 +61,18 @@ export class PlayersController {
     return this.PlayersService.replacePlayersByid(id, playerDto);
   }
 
-  @Patch(':id')
-  @HttpCode(HttpStatus.NO_CONTENT) // @HttpCode(204)
-  updatePlayersByid(
-    @Param(
-      'id',
-      new ParseIntPipe({
-        errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE,
-      }),
-    )
-    id: number,
-    @Body() playerDto: PlayerDto,
-  ): Promise<void> {
-    return this.PlayersService.updatePlayersById(id, playerDto);
-  }
+  // @Patch(':id')
+  // @HttpCode(HttpStatus.NO_CONTENT) // @HttpCode(204)
+  // updatePlayersByid(
+  //   @Param(
+  //     'id',
+  //     new ParseIntPipe({
+  //       errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE,
+  //     }),
+  //   )
+  //   id: number,
+  //   @Body() playerDto: PlayerDto,
+  // ): Promise<void> {
+  //   return this.PlayersService.updatePlayersById(id, playerDto);
+  // }
 }
