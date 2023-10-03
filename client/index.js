@@ -7,9 +7,9 @@ const CONTENT_TYPE_APPLICATION_JSON = { 'Content-Type': 'application/json' };
 // }
 //-----------------------------------------------------------------------------
 document.getElementById('searchPlayer').addEventListener('click', async () => {
-  const nombre = String(document.getElementById('searchField').value.trim());
+  const searchParam = String(document.getElementById('searchField').value.trim());
   try {
-    const response = await fetch(BASE_END_POINT);
+    const response = await fetch(`${BASE_END_POINT}?name=${searchParam}`);
     if (!response.ok) {
       console.log('searchField.error.response', response);
     }

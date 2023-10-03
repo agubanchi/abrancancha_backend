@@ -13,15 +13,16 @@ import { PlayerDto } from 'src/player/player.dto';
 export class PlayersController {
   constructor(private readonly PlayersService: PlayersService) { }
 
+  // @Get()
+  // getPlayers(): Promise<Player[]> {
+  //   return this.PlayersService.getPlayers();
+  // }
+  // @Get('filter') //<-otra opcion: https://platzi.com/clases/2272-nestjs/37076-get-parametros-query/
+  // getPlayerByName(@Query(new ValidationPipe()) playerName?: QueryPlayerDto): Promise<Player[]> {
   @Get()
-  getPlayers(): Promise<Player[]> {
-    return this.PlayersService.getPlayers();
-  }
-
-  @Get()
-  getPlayerByName(@Query('player') player?: string): Promise<Player[]> {
-    if (!player) return this.PlayersService.getPlayers();
-    return this.PlayersService.getPlayerByName(player)
+  getPlayers(@Query('name') playerName?: string): Promise<Player[]> {    
+    if (!playerName) return this.PlayersService.getPlayers();
+    return this.PlayersService.getPlayerByName(playerName)
   }
 
   @Get(':id')
