@@ -1,4 +1,488 @@
 {
+  "clubes": [
+    {
+      "id": 1,
+      "nombre": "Club Uno",
+      "direccion": "123 Calle Principal",
+      "telefono": "123-456-7890",
+      "email": "clubuno@example.com",
+      "tarifa": 500
+    },
+    {
+      "id": 2,
+      "nombre": "Club Dos",
+      "direccion": "456 Avenida Secundaria",
+      "telefono": "987-654-3210",
+      "email": "clubdos@example.com",
+      "tarifa": 600
+    },
+    {
+      "id": 3,
+      "nombre": "Club Tres",
+      "direccion": "789 Calle Terciaria",
+      "telefono": "111-222-3333",
+      "email": "clubtres@example.com",
+      "tarifa": 700
+    }
+  ],
+  "tipos_cancha": [
+    {
+      "id": 1,
+      "nombre": "Fútbol"
+    },
+    {
+      "id": 2,
+      "nombre": "Pádel"
+    },
+    {
+      "id": 3,
+      "nombre": "Tenis"
+    }
+  ],
+  "canchas_club": [
+    {
+      "id": 1,
+      "idClub": 1,
+      "numero": "C1",
+      "nombre": "Cancha 1",
+      "idTipo": 1,
+      "tarifa": 25,
+      "rating": 2,
+      "observaciones": "Cancha al aire libre",
+      "activa": true
+    },
+    {
+      "id": 2,
+      "idClub": 1,
+      "numero": "C2",
+      "nombre": "Cancha 2",
+      "idTipo": 1,
+      "tarifa": 50,
+      "rating": 4,
+      "observaciones": "Cancha de césped sintético",
+      "activa": true
+    },
+    {
+      "id": 3,
+      "idClub": 2,
+      "numero": "C3",
+      "nombre": "Cancha 3",
+      "idTipo": 2,
+      "tarifa": 15,
+      "rating": 5,
+      "observaciones": "Cancha cubierta",
+      "activa": true
+    },
+    {
+      "id": 4,
+      "idClub": 2,
+      "numero": "C4",
+      "nombre": "Cancha 4",
+      "idTipo": 3,
+      "tarifa": 20,
+      "rating": 2,
+      "observaciones": "Cancha con iluminación nocturna",
+      "activa": true
+    },
+    {
+      "id": 5,
+      "idClub": 3,
+      "numero": "C5",
+      "nombre": "Cancha 5",
+      "idTipo": 2,
+      "tarifa": 30,
+      "rating": 5,
+      "observaciones": "Cancha climatizada",
+      "activa": false
+    }
+  ],
+  "estados_usuario": [
+    {
+      "id": 1,
+      "nombre": "Activo"
+    },
+    {
+      "id": 2,
+      "nombre": "Desactivado"
+    },
+    {
+      "id": 3,
+      "nombre": "Suspendido"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Usuario Uno",
+      "password": "aA@1234",
+      "email": "usuario1@example.com",
+      "telefono": "123-456-7890",
+      "estado": "activo"
+    },
+    {
+      "id": 2,
+      "nombre": "Usuario Dos",
+      "password": "bB@5678",
+      "email": "usuario2@example.com",
+      "telefono": "987-654-3210",
+      "estado": "inactivo"
+    },
+    {
+      "id": 3,
+      "nombre": "María Rodríguez",
+      "password": "cC@9012",
+      "email": "maria@example.com",
+      "telefono": "555-555-5555",
+      "estado": "activo"
+    },
+    {
+      "id": 4,
+      "nombre": "Carlos Martínez",
+      "password": "dD@3456",
+      "email": "carlos@example.com",
+      "telefono": "999-888-7777",
+      "estado": "inactivo"
+    },
+    {
+      "id": 5,
+      "nombre": "Laura Pérez",
+      "password": "eE@7890",
+      "email": "laura@example.com",
+      "telefono": "111-222-3333",
+      "estado": "activo"
+    },
+    {
+      "id": 6,
+      "nombre": "Javier López",
+      "password": "fF@1234",
+      "email": "javier@example.com",
+      "telefono": "444-555-6666",
+      "estado": "activo"
+    },
+    {
+      "id": 7,
+      "nombre": "Isabel Fernández",
+      "password": "gG@5678",
+      "email": "isabel@example.com",
+      "telefono": "777-888-9999",
+      "estado": "inactivo"
+    },
+    {
+      "id": 8,
+      "nombre": "Miguel Sánchez",
+      "password": "hH@9012",
+      "email": "miguel@example.com",
+      "telefono": "222-333-4444",
+      "estado": "activo"
+    },
+    {
+      "id": 9,
+      "nombre": "Elena Ramírez",
+      "password": "iI@3456",
+      "email": "elena@example.com",
+      "telefono": "999-888-7777",
+      "estado": "inactivo"
+    },
+    {
+      "id": 10,
+      "nombre": "David González",
+      "password": "jJ@7890",
+      "email": "david@example.com",
+      "telefono": "111-222-3333",
+      "estado": "activo"
+    },
+    {
+      "id": 11,
+      "nombre": "Carmen Martínez",
+      "password": "kK@1234",
+      "email": "carmen@example.com",
+      "telefono": "444-555-6666",
+      "estado": "activo"
+    },
+    {
+      "id": 12,
+      "nombre": "Jorge Pérez",
+      "password": "lL@5678",
+      "email": "jorge@example.com",
+      "telefono": "777-888-9999",
+      "estado": "inactivo"
+    },
+    {
+      "id": 13,
+      "nombre": "Silvia López",
+      "password": "mM@9012",
+      "email": "silvia@example.com",
+      "telefono": "222-333-4444",
+      "estado": "activo"
+    },
+    {
+      "id": 14,
+      "nombre": "Pedro Ramírez",
+      "password": "nN@3456",
+      "email": "pedro@example.com",
+      "telefono": "999-888-7777",
+      "estado": "inactivo"
+    },
+    {
+      "id": 15,
+      "nombre": "Luis González",
+      "password": "oO@7890",
+      "email": "luis@example.com",
+      "telefono": "111-222-3333",
+      "estado": "activo"
+    },
+    {
+      "id": 16,
+      "nombre": "María José Sánchez",
+      "password": "pP@1234",
+      "email": "mariajose@example.com",
+      "telefono": "444-555-6666",
+      "estado": "activo"
+    },
+    {
+      "id": 17,
+      "nombre": "Francisco Martínez",
+      "password": "qQ@5678",
+      "email": "francisco@example.com",
+      "telefono": "777-888-9999",
+      "estado": "inactivo"
+    },
+    {
+      "id": 18,
+      "nombre": "Lucía Fernández",
+      "password": "rR@9012",
+      "email": "lucia@example.com",
+      "telefono": "222-333-4444",
+      "estado": "activo"
+    },
+    {
+      "id": 19,
+      "nombre": "Alberto Rodríguez",
+      "password": "sS@3456",
+      "email": "alberto@example.com",
+      "telefono": "999-888-7777",
+      "estado": "inactivo"
+    },
+    {
+      "id": 20,
+      "nombre": "Sara López",
+      "password": "tT@7890",
+      "email": "sara@example.com",
+      "telefono": "111-222-3333",
+      "estado": "activo"
+    },
+    {
+      "id": 21,
+      "nombre": "Manuel Pérez",
+      "password": "uU@1234",
+      "email": "manuel@example.com",
+      "telefono": "444-555-6666",
+      "estado": "activo"
+    },
+    {
+      "id": 22,
+      "nombre": "Cristina Martínez",
+      "password": "vV@5678",
+      "email": "cristina@example.com",
+      "telefono": "777-888-9999",
+      "estado": "inactivo"
+    },
+    {
+      "id": 23,
+      "nombre": "Raúl Sánchez",
+      "password": "wW@9012",
+      "email": "raul@example.com",
+      "telefono": "222-333-4444",
+      "estado": "activo"
+    },
+    {
+      "id": 24,
+      "nombre": "Marta López",
+      "password": "xX@3456",
+      "email": "marta@example.com",
+      "telefono": "999-888-7777",
+      "estado": "inactivo"
+    }
+  ],
+  "administradores": [
+    {
+      "id": 1,
+      "idUsuario": 1,
+      "idClub": 101
+    },
+    {
+      "id": 2,
+      "idUsuario": 2,
+      "idClub": 102
+    }
+  ],
+  "disponibilidad": [],
+  "calendario": [],
+  "cronograma": [],
+  "reservas": [
+    {
+      "id": 1,
+      "idUsuario": 1,
+      "idCancha": 1,
+      "fecha": "2023-10-21T10:00:00Z",
+      "estado": "confirmada"
+    },
+    {
+      "id": 2,
+      "idUsuario": 2,
+      "idCancha": 1,
+      "fecha": "2023-10-21T14:00:00Z",
+      "estado": "pendiente"
+    },
+    {
+      "id": 3,
+      "idUsuario": 3,
+      "idCancha": 1,
+      "fecha": "2023-10-21T11:00:00Z",
+      "estado": "confirmada"
+    },
+    {
+      "id": 4,
+      "idUsuario": 4,
+      "idCancha": 1,
+      "fecha": "2023-10-21T16:00:00Z",
+      "estado": "confirmada"
+    },
+    {
+      "id": 5,
+      "idUsuario": 5,
+      "idCancha": 1,
+      "fecha": "2023-10-21T19:00:00Z",
+      "estado": "pendiente"
+    },
+    {
+      "id": 6,
+      "idUsuario": 6,
+      "idCancha": 1,
+      "fecha": "2023-10-21T09:00:00Z",
+      "estado": "confirmada"
+    },
+    {
+      "id": 7,
+      "idUsuario": 7,
+      "idCancha": 2,
+      "fecha": "2023-10-21T22:00:00Z",
+      "estado": "confirmada"
+    },
+    {
+      "id": 8,
+      "idUsuario": 8,
+      "idCancha": 2,
+      "fecha": "2023-10-21T12:00:00Z",
+      "estado": "pendiente"
+    },
+    {
+      "id": 9,
+      "idUsuario": 9,
+      "idCancha": 2,
+      "fecha": "2023-10-21T15:00:00Z",
+      "estado": "confirmada"
+    },
+    {
+      "id": 10,
+      "idUsuario": 10,
+      "idCancha": 2,
+      "fecha": "2023-10-21T19:00:00Z",
+      "estado": "pendiente"
+    }
+  ],
+  "agenda": [
+    {
+      "id": 1,
+      "idCancha": 101,
+      "diaSemana": 1,
+      "horaDesde": 9,
+      "horaHasta": 12,
+      "duracion": 60,
+      "fecha": "2023-10-21"
+    },
+    {
+      "id": 2,
+      "idCancha": 102,
+      "diaSemana": 2,
+      "horaDesde": 14,
+      "horaHasta": 18,
+      "duracion": 45,
+      "fecha": "2023-10-22"
+    },
+    {
+      "id": 3,
+      "idCancha": 103,
+      "diaSemana": 3,
+      "horaDesde": 11,
+      "horaHasta": 15,
+      "duracion": 60,
+      "fecha": "2023-10-23"
+    },
+    {
+      "id": 4,
+      "idCancha": 104,
+      "diaSemana": 4,
+      "horaDesde": 15,
+      "horaHasta": 19,
+      "duracion": 30,
+      "fecha": "2023-10-24"
+    },
+    {
+      "id": 5,
+      "idCancha": 105,
+      "diaSemana": 5,
+      "horaDesde": 18,
+      "horaHasta": 21,
+      "duracion": 45,
+      "fecha": "2023-10-25"
+    },
+    {
+      "id": 6,
+      "idCancha": 101,
+      "diaSemana": 1,
+      "horaDesde": 9,
+      "horaHasta": 12,
+      "duracion": 60,
+      "fecha": "2023-10-26"
+    },
+    {
+      "id": 7,
+      "idCancha": 102,
+      "diaSemana": 2,
+      "horaDesde": 14,
+      "horaHasta": 18,
+      "duracion": 45,
+      "fecha": "2023-10-27"
+    },
+    {
+      "id": 8,
+      "idCancha": 103,
+      "diaSemana": 3,
+      "horaDesde": 11,
+      "horaHasta": 15,
+      "duracion": 60,
+      "fecha": "2023-10-28"
+    },
+    {
+      "id": 9,
+      "idCancha": 104,
+      "diaSemana": 4,
+      "horaDesde": 15,
+      "horaHasta": 19,
+      "duracion": 30,
+      "fecha": "2023-10-29"
+    },
+    {
+      "id": 10,
+      "idCancha": 105,
+      "diaSemana": 5,
+      "horaDesde": 18,
+      "horaHasta": 21,
+      "duracion": 45,
+      "fecha": "2023-10-30"
+    }
+  ],
   "padelplayers": [
     {
       "id": 1,
