@@ -39,7 +39,7 @@
       "nombre": "Tenis"
     }
   ],
-  "canchas_club": [
+  "canchas": [
     {
       "id": 1,
       "idClub": 1,
@@ -391,7 +391,7 @@
       "estado": "pendiente"
     }
   ],
-  "agenda": [
+  "agendas": [
     {
       "id": 1,
       "idCancha": 101,
