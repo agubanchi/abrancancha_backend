@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { AgendaDto } from 'src/agenda/agenda.dto';
 import { Agenda } from 'src/agenda/agenda.interface';
-const BASE_URL = 'http://localhost:3030/padelagendas/';
+const BASE_URL = 'http://localhost:3030/agendas/';
 export const CONTENT_TYPE_APPLICATION_JSON = {
     'Content-Type': 'application/json',
 };

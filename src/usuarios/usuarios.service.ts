@@ -2,7 +2,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { UsuarioDto } from 'src/usuario/usuario.dto';
 import { Usuario } from 'src/usuario/usuario.interface';
-const BASE_URL = 'http://localhost:3030/padelusuarios/';
+const BASE_URL = 'http://localhost:3030/usuarios/';
 export const CONTENT_TYPE_APPLICATION_JSON = {
     'Content-Type': 'application/json',
 };

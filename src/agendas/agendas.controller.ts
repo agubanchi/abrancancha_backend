@@ -13,8 +13,9 @@ export class AgendasController {
 
     @Get()
     getAgendas(@Query('name') agendaName?: string): Promise<Agenda[]> {
-        if (!agendaName) return this.AgendasService.getAgendas();
-        return this.AgendasService.getAgendaByName(agendaName)
+        // if (!agendaName) 
+        return this.AgendasService.getAgendas();
+        // return this.AgendasService.getAgendaByName(agendaName)
     }
 
     @Get(':id')

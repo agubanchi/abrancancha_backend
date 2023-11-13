@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { AdministradorDto } from 'src/administrador/administrador.dto';
 import { Administrador } from 'src/administrador/administrador.interface';
-const BASE_URL = 'http://localhost:3030/padelaplayers/';
+const BASE_URL = 'http://localhost:3030/administradores/';
 export const CONTENT_TYPE_APPLICATION_JSON = {
     'Content-Type': 'application/json',
 };

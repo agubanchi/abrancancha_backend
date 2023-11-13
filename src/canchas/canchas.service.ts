@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CanchaDto } from 'src/cancha/cancha.dto';
 import { Cancha } from 'src/cancha/cancha.interface';
-const BASE_URL = 'http://localhost:3030/padelcanchas/';
+const BASE_URL = 'http://localhost:3030/canchas/';
 export const CONTENT_TYPE_APPLICATION_JSON = {
     'Content-Type': 'application/json',
 };

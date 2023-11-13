@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { ReservaDto } from 'src/reserva/reserva.dto';
 import { Reserva } from 'src/reserva/reserva.interface';
-const BASE_URL = 'http://localhost:3030/padelplayers/';
+const BASE_URL = 'http://localhost:3030/reservas/';
 export const CONTENT_TYPE_APPLICATION_JSON = {
     'Content-Type': 'application/json',
 };
