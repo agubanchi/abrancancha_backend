@@ -15,6 +15,8 @@ import { UsuariosController } from './usuarios/usuarios.controller';
 import { UsuariosService } from './usuarios/usuarios.service';
 import { AgendasController } from './agendas/agendas.controller';
 import { AgendasService } from './agendas/agendas.service';
+import { TiposCanchaController } from './tipos-cancha/tipos-cancha.controller';
+import { TiposCanchaService } from './tipos-cancha/tipos-cancha.service';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
@@ -23,7 +25,7 @@ import { AgendasService } from './agendas/agendas.service';
         '/' /** para que los endpoints incorrectos no redirijan al home */,
     }) /* PlayerModule, */,
   ],
-  controllers: [/* AppController, */ PlayersController, CanchasController, ReservasController, AdministradoresController, UsuariosController, AgendasController],
-  providers: [/* AppService, */ PlayersService, CanchasService, ReservasService, AdministradoresService, UsuariosService, AgendasService],
+  controllers: [/* AppController, */ PlayersController, CanchasController, ReservasController, AdministradoresController, UsuariosController, AgendasController, TiposCanchaController],
+  providers: [/* AppService, */ PlayersService, CanchasService, ReservasService, AdministradoresService, UsuariosService, AgendasService, TiposCanchaService],
 })
 export class AppModule {}
